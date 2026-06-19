@@ -1,0 +1,2624 @@
+[
+  {
+    "id": "arm-cat-提腕力",
+    "name": "提腕力",
+    "items": [
+      {
+        "id": "arm-提腕力-提腕半程",
+        "name": "提腕半程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 24.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 23.3,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-提腕全程",
+        "name": "提腕全程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 7.5,
+          "左": 7.5
+        },
+        "weight": 7.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 13.7,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 10.8,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-黑腕球-转上来",
+        "name": "黑腕球-转上来",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 7.5
+        },
+        "weight": 7.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-提腕力-黑腕球-挑腕",
+        "name": "黑腕球-挑腕",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 22.1,
+            "side": "单项"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-拳峰全程提",
+        "name": "拳峰全程提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 20.0
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 23.6,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 20.4,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-拳峰把手提",
+        "name": "拳峰把手提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 20.0
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 21.9,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 17.2,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-拳峰半程提",
+        "name": "拳峰半程提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 22.5
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 24.3,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 21.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-桌-拳峰绑带提",
+        "name": "【桌】拳峰绑带提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 23.7,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 21.4,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提腕力-桌-拳峰提",
+        "name": "【桌】拳峰提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 30.0
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 28.9,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 25.6,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-提力",
+    "name": "提力",
+    "items": [
+      {
+        "id": "arm-提力-虎口提",
+        "name": "虎口提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 40.0,
+          "左": 40.0
+        },
+        "weight": 40.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 38.4,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 27.4,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提力-牧师虎口提",
+        "name": "牧师虎口提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 30.0,
+          "左": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-提力-顶肘虎口提",
+        "name": "顶肘虎口提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 47.5,
+          "左": 47.5
+        },
+        "weight": 47.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 49.3,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 45.4,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提力-二头锤举半程",
+        "name": "二头锤举半程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-提力-二头锤举全程",
+        "name": "二头锤举全程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-提力-桌-虎口提",
+        "name": "【桌】虎口提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 45.0,
+          "左": 45.0
+        },
+        "weight": 45.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 36.2,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 33.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-提力-德文提",
+        "name": "德文提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 40.0,
+          "左": 37.5
+        },
+        "weight": 40.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 32.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-旋前力",
+    "name": "旋前力",
+    "items": [
+      {
+        "id": "arm-旋前力-虎口旋提",
+        "name": "虎口旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 37.5,
+          "左": 37.5
+        },
+        "weight": 37.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 25.4,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-虎口旋提全程",
+        "name": "虎口旋提全程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-旋前力-虎口旋提球",
+        "name": "虎口旋提球",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 28.6,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 27.7,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-虎口旋提T管",
+        "name": "虎口旋提T管",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 35.0
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 33.3,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-虎口旋提香蕉",
+        "name": "虎口旋提香蕉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 30.0,
+          "左": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 39.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 37.6,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-虎口旋提棍",
+        "name": "虎口旋提棍",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 36.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 32.1,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-龙-带虎口旋",
+        "name": "【龙】带虎口旋",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 26.1,
+          "左": 26.1
+        },
+        "weight": 26.1,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-旋前力-桌-球旋提",
+        "name": "【桌】球旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 30.0,
+          "左": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 26.9,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-旋提真手",
+        "name": "【桌】旋提真手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-旋前力-桌-旋提T管",
+        "name": "【桌】旋提T管",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 42.5,
+          "左": 42.5
+        },
+        "weight": 42.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.2,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 26.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-旋提香蕉",
+        "name": "【桌】旋提香蕉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 34.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 24.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-高位香蕉",
+        "name": "【桌】高位香蕉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 23.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 20.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-高位T管",
+        "name": "【桌】高位T管",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 22.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 21.3,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-高位豌豆",
+        "name": "【桌】高位豌豆",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 30.4,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 26.9,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-高位粗管",
+        "name": "【桌】高位粗管",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 30.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 27.9,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-高位木板",
+        "name": "【桌】高位木板",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 22.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 19.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-棍旋提",
+        "name": "【桌】棍旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 29.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 19.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-桌-轨道把手",
+        "name": "【桌】轨道把手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 21.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 14.6,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋前力-旋风旋前",
+        "name": "旋风旋前",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 55.0,
+          "左": 55.0
+        },
+        "weight": 55.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-拇指力",
+    "name": "拇指力",
+    "items": [
+      {
+        "id": "arm-拇指力-拇指带旋提",
+        "name": "拇指带旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 32.5
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 36.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 32.2,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-拇指把手旋提",
+        "name": "拇指把手旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.9,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 34.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-豌豆把手",
+        "name": "豌豆把手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 37.5,
+          "左": 37.5
+        },
+        "weight": 37.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 39.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 33.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-细管旋提",
+        "name": "细管旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 33.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-粗管旋提",
+        "name": "粗管旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 35.0
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 29.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-拇指单独",
+        "name": "拇指单独",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 12.5,
+          "左": 12.5
+        },
+        "weight": 12.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 20.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 18.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-龙-拇指旋",
+        "name": "【龙】拇指旋",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 14.7,
+          "左": 14.7
+        },
+        "weight": 14.7,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-拇指力-桌-拇指旋",
+        "name": "【桌】拇指旋",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 11.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 10.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-桌-粗管旋提",
+        "name": "【桌】粗管旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 42.5,
+          "左": 40.0
+        },
+        "weight": 42.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 34.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 29.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-桌-豌豆把手",
+        "name": "【桌】豌豆把手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 42.5,
+          "左": 40.0
+        },
+        "weight": 42.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 38.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 34.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-拇指力-桌-拇指旋提",
+        "name": "【桌】拇指旋提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 30.0,
+          "左": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 34.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 29.0,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-桡骨力",
+    "name": "桡骨力",
+    "items": [
+      {
+        "id": "arm-桡骨力-桡骨旋前",
+        "name": "桡骨旋前",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 28.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 27.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-桡骨力-桌面桡骨旋前",
+        "name": "桌面桡骨旋前",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 27.5
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 33.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 24.0,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-伸腕力",
+    "name": "伸腕力",
+    "items": [
+      {
+        "id": "arm-伸腕力-杠铃伸腕",
+        "name": "杠铃伸腕",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-伸腕力-哑铃伸腕",
+        "name": "哑铃伸腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-伸腕力-千斤顶伸腕",
+        "name": "千斤顶伸腕",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-伸腕力-卷把伸腕",
+        "name": "卷把伸腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 10.0,
+          "左": 10.0
+        },
+        "weight": 10.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-伸腕力-正手杠铃弯举",
+        "name": "正手杠铃弯举",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-后拉力",
+    "name": "后拉力",
+    "items": [
+      {
+        "id": "arm-后拉力-泰顶卷把",
+        "name": "泰顶卷把",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 15.0,
+          "左": 15.0
+        },
+        "weight": 15.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-后拉力-泰顶提",
+        "name": "泰顶提",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 30.0,
+          "左": 30.0
+        },
+        "weight": 30.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-扣腕力",
+    "name": "扣腕力",
+    "items": [
+      {
+        "id": "arm-扣腕力-桌-扣腕",
+        "name": "【桌】扣腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 32.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 29.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-扣腕力-龙-扣腕",
+        "name": "【龙】扣腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.0,
+          "左": 17.0
+        },
+        "weight": 17.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-屈腕力",
+    "name": "屈腕力",
+    "items": [
+      {
+        "id": "arm-屈腕力-哑铃屈腕全",
+        "name": "哑铃屈腕全",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-哑铃屈腕半",
+        "name": "哑铃屈腕半",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 32.5
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-卷把屈腕",
+        "name": "卷把屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 35.0
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 30.2,
+            "side": "左"
+          },
+          {
+            "date": "表格导入",
+            "weight": 28.0,
+            "side": "右"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-杠铃屈腕",
+        "name": "杠铃屈腕",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 55.0
+        },
+        "weight": 55.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-桌-指力后拉",
+        "name": "【桌】指力后拉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 24.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 23.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-桌-红丹后拉",
+        "name": "【桌】红丹后拉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 27.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 25.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-桌-红指后拉",
+        "name": "【桌】红指后拉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 35.7,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 31.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-桌-红指掌后拉",
+        "name": "【桌】红指掌后拉",
+        "sides": [
+          "左"
+        ],
+        "sideWeights": {
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 26.5,
+            "side": "左"
+          },
+          {
+            "date": "表格导入",
+            "weight": 26.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-偏心哑铃屈腕",
+        "name": "偏心哑铃屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 13.0,
+          "左": 13.0
+        },
+        "weight": 13.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-细德文桡侧屈腕",
+        "name": "细德文桡侧屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-细德文尺侧屈腕",
+        "name": "细德文尺侧屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-粗德文桡侧屈腕",
+        "name": "粗德文桡侧屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 12.5,
+          "左": 12.5
+        },
+        "weight": 12.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-粗德文尺侧屈腕",
+        "name": "粗德文尺侧屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 15.0,
+          "左": 15.0
+        },
+        "weight": 15.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-超粗-尺侧",
+        "name": "超粗-尺侧",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-超粗-桡侧",
+        "name": "超粗-桡侧",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 15.0,
+          "左": 15.0
+        },
+        "weight": 15.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-屈腕力-德文后卷",
+        "name": "德文后卷",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 27.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 20.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-桌侧屈腕",
+        "name": "桌侧屈腕",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 32.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-屈腕力-桌-下三指",
+        "name": "【桌】下三指",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 20.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 16.0,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-内侧力",
+    "name": "内侧力",
+    "items": [
+      {
+        "id": "arm-内侧力-内侧弯举全程",
+        "name": "内侧弯举全程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 32.5
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-内侧力-内侧弯举",
+        "name": "内侧弯举",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 35.0
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 35.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 35.0,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-指力",
+    "name": "指力",
+    "items": [
+      {
+        "id": "arm-指力-哑铃指屈",
+        "name": "哑铃指屈",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 32.5
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-指力-手指把手",
+        "name": "手指把手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-指力-鹰爪",
+        "name": "鹰爪",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 30.0
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 25.0,
+            "side": "左"
+          },
+          {
+            "date": "表格导入",
+            "weight": 20.9,
+            "side": "右"
+          }
+        ]
+      },
+      {
+        "id": "arm-指力-方块握力-时长",
+        "name": "方块握力（时长）",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 17.5
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-握力",
+    "name": "握力",
+    "items": [
+      {
+        "id": "arm-握力-握力计",
+        "name": "握力计",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 66.6,
+          "左": 60.0
+        },
+        "weight": 66.6,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-握力-万嘉",
+        "name": "万嘉",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 225.0,
+          "左": 225.0
+        },
+        "weight": 225.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-二头力",
+    "name": "二头力",
+    "items": [
+      {
+        "id": "arm-二头力-曲杆全程弯举-10次",
+        "name": "曲杆全程弯举-10次",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 60.0
+        },
+        "weight": 60.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-曲杆半程弯举-10次",
+        "name": "曲杆半程弯举-10次",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 65.0
+        },
+        "weight": 65.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-哑铃二头弯举",
+        "name": "哑铃二头弯举",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 25.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 22.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-二头力-牧师凳弯举",
+        "name": "牧师凳弯举",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 22.5
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-椅子斜弯举",
+        "name": "椅子斜弯举",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-二头器械-双手全程",
+        "name": "二头器械-双手全程",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 63.0
+        },
+        "weight": 63.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-二头器械-双手锁臂",
+        "name": "二头器械-双手锁臂",
+        "sides": [
+          "单项"
+        ],
+        "sideWeights": {
+          "单项": 84.0
+        },
+        "weight": 84.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-二头器械全程",
+        "name": "二头器械全程",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 50.0,
+          "左": 50.0
+        },
+        "weight": 50.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-二头力-二头器械锁臂",
+        "name": "二头器械锁臂",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 50.0,
+          "左": 50.0
+        },
+        "weight": 50.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-横向力",
+    "name": "横向力",
+    "items": [
+      {
+        "id": "arm-横向力-龙-高位横扫",
+        "name": "【龙】高位横扫",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.0,
+          "左": 17.0
+        },
+        "weight": 17.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-横向力-龙-横扫",
+        "name": "【龙】横扫",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 14.7,
+          "左": 14.7
+        },
+        "weight": 14.7,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-横向力-桌-轮不动身",
+        "name": "【桌】轮不动身",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 32.5
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-横向力-桌-轮动身",
+        "name": "【桌】轮动身",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 35.0
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 50.0,
+            "side": "左"
+          },
+          {
+            "date": "表格导入",
+            "weight": 45.5,
+            "side": "右"
+          }
+        ]
+      },
+      {
+        "id": "arm-横向力-桌-民间掰",
+        "name": "【桌】民间掰",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-横向力-桌-横扫",
+        "name": "【桌】横扫",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 21.5,
+            "side": "左"
+          },
+          {
+            "date": "表格导入",
+            "weight": 20.0,
+            "side": "右"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-勾手力",
+    "name": "勾手力",
+    "items": [
+      {
+        "id": "arm-勾手力-桌-仿生勾手",
+        "name": "【桌】仿生勾手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 44.0,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 39.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-勾手力-桌-卷把勾手",
+        "name": "【桌】卷把勾手",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 27.5,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 25.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-勾手力-桌-锥形勾",
+        "name": "【桌】锥形勾",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 32.5,
+          "左": 32.5
+        },
+        "weight": 32.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 34.2,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "arm-cat-旋后力",
+    "name": "旋后力",
+    "items": [
+      {
+        "id": "arm-旋后力-旋风旋后",
+        "name": "旋风旋后",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 35.0,
+          "左": 35.0
+        },
+        "weight": 35.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-旋后力-球旋后",
+        "name": "球旋后",
+        "sides": [
+          "右"
+        ],
+        "sideWeights": {
+          "右": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-旋后力-球旋后-左",
+        "name": "球旋后-左",
+        "sides": [
+          "左"
+        ],
+        "sideWeights": {
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "arm-旋后力-桌-带子旋后",
+        "name": "【桌】带子旋后",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 28.7,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 26.5,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "arm-旋后力-桌-勾手大师",
+        "name": "【桌】勾手大师",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 15.0,
+          "左": 15.0
+        },
+        "weight": 15.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 26.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 22.5,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  }
+]

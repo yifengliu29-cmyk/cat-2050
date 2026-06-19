@@ -1,0 +1,342 @@
+[
+  {
+    "id": "finger-cat-深浅板",
+    "name": "深浅板",
+    "items": [
+      {
+        "id": "finger-深浅板-最浅",
+        "name": "最浅",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 20.0,
+          "左": 20.0
+        },
+        "weight": 20.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 24.9,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 22.6,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-深浅板-最浅-锁",
+        "name": "最浅- 锁",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 12.5,
+          "左": 12.5
+        },
+        "weight": 12.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "finger-深浅板-浅",
+        "name": "浅",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 34.7,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 30.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-深浅板-浅-锁",
+        "name": "浅- 锁",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 15.0,
+          "左": 15.0
+        },
+        "weight": 15.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "finger-深浅板-深",
+        "name": "深",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 37.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 31.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-深浅板-深-锁",
+        "name": "深- 锁",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      },
+      {
+        "id": "finger-深浅板-最深",
+        "name": "最深",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 22.5,
+          "左": 22.5
+        },
+        "weight": 22.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 38.8,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 32.9,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-深浅板-最深-锁",
+        "name": "最深- 锁",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  },
+  {
+    "id": "finger-cat-洞板",
+    "name": "洞板",
+    "items": [
+      {
+        "id": "finger-洞板-一指",
+        "name": "一指",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 12.5,
+          "左": 12.5
+        },
+        "weight": 12.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 22.6,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 22.0,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-洞板-二指",
+        "name": "二指",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 17.5,
+          "左": 17.5
+        },
+        "weight": 17.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 34.2,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 30.2,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-洞板-三指",
+        "name": "三指",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 27.5,
+          "左": 27.5
+        },
+        "weight": 27.5,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 43.2,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 43.2,
+            "side": "左"
+          }
+        ]
+      },
+      {
+        "id": "finger-洞板-四指",
+        "name": "四指",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 25.0,
+          "左": 25.0
+        },
+        "weight": 25.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": [
+          {
+            "date": "表格导入",
+            "weight": 58.2,
+            "side": "右"
+          },
+          {
+            "date": "表格导入",
+            "weight": 50.8,
+            "side": "左"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "finger-cat-捏捏",
+    "name": "捏捏",
+    "items": [
+      {
+        "id": "finger-捏捏-木",
+        "name": "木",
+        "sides": [
+          "右",
+          "左"
+        ],
+        "sideWeights": {
+          "右": 15.0,
+          "左": 15.0
+        },
+        "weight": 15.0,
+        "level": 1,
+        "count": 0,
+        "focus": false,
+        "history": [],
+        "maxRecords": []
+      }
+    ]
+  }
+]

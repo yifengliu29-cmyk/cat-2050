@@ -1,0 +1,1898 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2050 训练计划</title>
+  <style>
+    :root {
+      --bg: #fbf9ff;
+      --ink: #1f1730;
+      --muted: #7c728e;
+      --line: #d7c5f4;
+      --panel: #ffffff;
+      --green: #7c3aed;
+      --green-soft: #f0e8ff;
+      --orange: #b993ff;
+      --orange-soft: #f3ecff;
+      --blue: #7c3aed;
+      --blue-soft: #eee7ff;
+      --red: #d13f72;
+      --gray: #f3eff8;
+      --shadow: 0 12px 26px rgba(86, 54, 140, .12);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      place-items: center;
+      padding: 14px;
+      background: #eee8f8;
+      color: var(--ink);
+      font-family: "Microsoft YaHei", "PingFang SC", system-ui, -apple-system, sans-serif;
+      letter-spacing: 0;
+      overflow: hidden;
+    }
+
+    #app {
+      width: min(390px, calc(100dvh * 390 / 844), 100vw);
+      height: min(844px, 100dvh, calc(100vw * 844 / 390));
+      background: var(--bg);
+      border: 1px solid rgba(124, 58, 237, .12);
+      border-radius: 28px;
+      box-shadow: 0 28px 70px rgba(76, 48, 128, .2);
+      overflow: hidden;
+    }
+
+    button, input, select {
+      font: inherit;
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 6px;
+      min-height: 36px;
+      padding: 0 12px;
+      cursor: pointer;
+    }
+
+    button:hover { border-color: #9caf9f; }
+    button.primary { background: var(--green); color: #fff; border-color: var(--green); }
+    button.icon {
+      width: 36px;
+      padding: 0;
+      display: inline-grid;
+      place-items: center;
+      font-weight: 700;
+    }
+
+    button.icon:disabled {
+      opacity: .38;
+      cursor: not-allowed;
+    }
+    button.ghost { background: transparent; }
+    button.danger { color: var(--red); }
+
+    input, select {
+      width: 100%;
+      min-height: 38px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 0 10px;
+      background: #fff;
+      color: var(--ink);
+    }
+
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .app {
+      position: relative;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr 76px;
+      grid-template-columns: 1fr;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      background: #6d28d9;
+      color: #fff;
+      padding: 8px 10px 10px;
+      display: block;
+      grid-row: 2;
+      height: 76px;
+      border-top: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 -10px 24px rgba(109, 40, 217, .18);
+    }
+
+    .brand {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 8px;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-weight: 800;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.1;
+    }
+
+    .nav {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 4px;
+      height: 100%;
+    }
+
+    .nav button {
+      width: 100%;
+      min-height: 58px;
+      border: 0;
+      background: transparent;
+      color: rgba(255,255,255,.78);
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+      text-align: left;
+      padding: 6px 2px;
+      font-size: 11px;
+      line-height: 1.15;
+    }
+
+    .nav button.active {
+      background: #ffffff;
+      color: #6d28d9;
+    }
+
+    .nav-icon {
+      width: 25px;
+      height: 25px;
+      border-radius: 6px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,.14);
+      font-size: 15px;
+    }
+
+    .nav button.active .nav-icon {
+      background: #f0e8ff;
+      color: #6d28d9;
+    }
+
+    main {
+      grid-row: 1;
+      padding: 0;
+      min-width: 0;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 0;
+      padding: 18px 14px 14px;
+      background: #6d28d9;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(109, 40, 217, .18);
+    }
+
+    .title h2 {
+      margin: 0;
+      font-size: 23px;
+      line-height: 1.15;
+    }
+
+    .pullup-title {
+      display: grid;
+      gap: 2px;
+    }
+
+    .pullup-title h2 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.1;
+    }
+
+    .pullup-total {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .pullup-meta {
+      color: rgba(255,255,255,.78);
+      font-size: 12px;
+      line-height: 1.2;
+      display: grid;
+      gap: 1px;
+    }
+
+    .title p {
+      margin: 0;
+      color: rgba(255,255,255,.76);
+      font-size: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      flex: 0 0 auto;
+    }
+
+    .topbar button {
+      background: rgba(255,255,255,.12);
+      border-color: rgba(255,255,255,.25);
+      color: #fff;
+      min-height: 34px;
+    }
+
+    .topbar button.primary {
+      background: #fff;
+      border-color: #fff;
+      color: #6d28d9;
+    }
+
+    .topbar button.icon {
+      width: 34px;
+      min-height: 34px;
+      border-radius: 9px;
+      font-size: 17px;
+      padding: 0;
+    }
+
+    .topbar button.icon:disabled {
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.5);
+      border-color: rgba(255,255,255,.16);
+    }
+
+    .pullup-topbar {
+      align-items: flex-end;
+    }
+
+    .pullup-topbar .toolbar {
+      padding-bottom: 2px;
+    }
+
+    .pullup-fab-spacer {
+      height: 74px;
+    }
+
+    .pullup-fab {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 88px;
+      z-index: 12;
+      min-height: 50px;
+      border-radius: 12px;
+      box-shadow: 0 14px 28px rgba(109, 40, 217, .28);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 14px;
+    }
+
+    .section {
+      margin-top: 18px;
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+
+    .band {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .item-card {
+      background: #ffffff;
+      border: 1px solid #cbb4ef;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 12px;
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+      transition: transform .18s ease;
+      touch-action: pan-y;
+      user-select: none;
+    }
+
+    .swipe-row {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .swipe-actions {
+      position: absolute;
+      inset: 0 0 0 auto;
+      width: 158px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-end;
+      padding-right: 2px;
+      z-index: 1;
+    }
+
+    .swipe-row.open .item-card {
+      transform: translateX(-158px);
+    }
+
+    .swipe-row.dragging .item-card {
+      transition: none;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .title-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+      flex-wrap: wrap;
+    }
+
+    .item-name {
+      font-weight: 800;
+      font-size: 16px;
+      overflow-wrap: anywhere;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .count-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .count-line .icon {
+      width: 25px;
+      height: 25px;
+      min-height: 25px;
+      padding: 0;
+      border-radius: 6px;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .pill {
+      min-height: 28px;
+      border-radius: 999px;
+      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--gray);
+      color: var(--ink);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .pill.green { background: var(--green-soft); color: var(--green); }
+    .pill.orange { background: var(--orange-soft); color: #8055cb; }
+    .pill.blue { background: var(--blue-soft); color: var(--green); }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(56px, 1fr));
+      gap: 6px;
+    }
+
+    .stage {
+      min-height: 52px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      gap: 3px;
+      text-align: center;
+      padding: 6px;
+    }
+
+    .stage small { color: var(--muted); }
+    .stage.doing { background: var(--orange-soft); border-color: #d9c3ff; color: #6f47bd; }
+    .stage.done { background: var(--green); border-color: var(--green); color: #fff; }
+    .stage.done small { color: #e8fff0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .side-metrics {
+      display: grid;
+      gap: 5px;
+    }
+
+    .plan-body {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 88px;
+      gap: 8px;
+      align-items: start;
+    }
+
+    .side-actions {
+      display: grid;
+      grid-template-columns: repeat(2, 40px);
+      gap: 6px;
+      justify-items: stretch;
+      justify-content: end;
+    }
+
+    .side-actions button {
+      width: 40px;
+      min-height: 30px;
+      padding: 0;
+      font-size: 13px;
+    }
+
+    .side-actions button.icon {
+      width: 42px;
+      min-height: 32px;
+    }
+
+    .meta .inline-plus {
+      width: 24px;
+      min-height: 24px;
+      margin-left: 6px;
+      padding: 0;
+      border-radius: 7px;
+      font-size: 14px;
+      vertical-align: middle;
+    }
+
+    .side-row {
+      display: grid;
+      grid-template-columns: 24px 1fr 1fr;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .side-badge {
+      min-height: 24px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: #d8c2ff;
+      color: #6d28d9;
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .tree {
+      display: grid;
+      gap: 12px;
+      padding: 14px;
+    }
+
+    .tree-row {
+      display: grid;
+      gap: 8px;
+    }
+
+    .tree-summary {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #d8c2ff;
+      border-radius: 8px;
+      min-height: 46px;
+      padding: 0 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: #2a1941;
+      box-shadow: 0 8px 18px rgba(124, 58, 237, .06);
+    }
+
+    .tree-children {
+      display: grid;
+      gap: 10px;
+      margin-left: 16px;
+      padding-left: 14px;
+      border-left: 2px solid var(--line);
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+
+    .detail-list .item-card {
+      padding: 10px;
+      gap: 7px;
+      border-color: #c6aaf0;
+      box-shadow: 0 10px 22px rgba(109, 40, 217, .16);
+    }
+
+    .detail-list .item-name {
+      font-size: 15px;
+    }
+
+    .detail-list .meta {
+      font-size: 12px;
+    }
+
+    .detail-list .pill {
+      min-height: 24px;
+      padding: 2px 8px;
+      font-size: 12px;
+    }
+
+    .detail-list .item-head {
+      gap: 8px;
+      align-items: center;
+    }
+
+    .detail-list .item-head > div {
+      min-width: 0;
+    }
+
+    .detail-list .title-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: nowrap;
+      line-height: 1;
+    }
+
+    .detail-list .title-line .meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .detail-list .item-head .icon {
+      width: 28px;
+      min-height: 28px;
+      font-size: 14px;
+      border-radius: 8px;
+    }
+
+    .detail-list .count-line .icon,
+    .detail-list .inline-plus {
+      width: 24px;
+      height: 24px;
+      min-height: 24px;
+      font-size: 13px;
+      border-radius: 7px;
+      margin-left: 0;
+      padding: 0;
+      display: inline-grid;
+      place-items: center;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    .focus {
+      border-color: #b88cff;
+      background: #f3ecff;
+    }
+
+    .focus .pill.green,
+    .focus .pill.blue,
+    .focus .side-badge {
+      background: #d8c2ff;
+      color: #2a1941;
+    }
+
+    .row-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .compact-controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      align-items: end;
+    }
+
+    .history {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(38px, 1fr));
+      gap: 6px;
+    }
+
+    .calendar-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--ink);
+    }
+
+    .calendar-head strong {
+      font-size: 16px;
+    }
+
+    .calendar-head .icon {
+      width: 32px;
+      min-height: 32px;
+      border-radius: 8px;
+      color: #6d28d9;
+      background: #f3ecff;
+    }
+
+    .day {
+      min-height: 58px;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      padding: 7px 6px 6px;
+      display: grid;
+      align-content: start;
+      justify-items: center;
+      gap: 6px;
+      }
+
+    .day-date {
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .day-count {
+      min-height: 16px;
+      padding: 1px 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 16px;
+      font-weight: 600;
+    }
+
+    .day-count:empty {
+      display: none;
+    }
+
+    .day.hit { background: var(--green-soft); border-color: #98d7b6; }
+    .day.miss { background: #f6dddd; border-color: #e2aaa6; }
+    .day.blank { opacity: .45; }
+
+    .empty {
+      padding: 28px;
+      text-align: center;
+      border: 1px dashed #b8c2b9;
+      border-radius: 8px;
+      color: var(--muted);
+      background: rgba(255,255,255,.55);
+    }
+
+    dialog {
+      border: 0;
+      border-radius: 8px;
+      width: min(352px, calc(100vw - 28px));
+      max-height: min(760px, calc(100dvh - 40px));
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 22px 60px rgba(0,0,0,.22);
+    }
+
+    dialog::backdrop { background: rgba(18,25,20,.36); }
+    .modal-body {
+      max-height: min(760px, calc(100dvh - 40px));
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr) auto;
+    }
+
+    .modal-content {
+      padding: 0 18px 12px;
+      display: grid;
+      gap: 12px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+
+    .modal-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+    .modal-head,
+    .modal-actions {
+      padding: 18px;
+      background: #fff;
+      z-index: 1;
+    }
+
+    .modal-head h3 { margin: 0; font-size: 18px; }
+
+    .modal-actions {
+      justify-content: flex-end;
+      border-top: 1px solid #eee6ff;
+    }
+
+    .pullup-group-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .pullup-group-list label {
+      position: relative;
+      min-width: 0;
+      gap: 5px;
+    }
+
+    .pullup-group-list input {
+      min-height: 38px;
+      padding: 0 8px;
+    }
+
+    .pullup-group-label {
+      padding-right: 20px;
+    }
+
+    .pullup-group-delete {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 22px;
+      min-height: 22px;
+      padding: 0;
+      border-radius: 999px;
+      color: #e11d48;
+      background: #fff4f7;
+      font-size: 15px;
+      line-height: 1;
+    }
+
+    .pullup-group-add {
+      width: 100%;
+      min-height: 38px;
+      justify-self: start;
+      color: #6d28d9;
+      background: #f3ecff;
+    }
+
+    .toast {
+      position: fixed;
+      right: calc(50vw - min(195px, calc(100dvh * 195 / 844), 50vw) + 14px);
+      bottom: calc((100dvh - min(844px, 100dvh, calc(100vw * 844 / 390))) / 2 + 92px);
+      background: var(--ink);
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 6px;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: .2s ease;
+      z-index: 20;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 430px), (max-height: 700px) {
+      body { padding: 0; }
+      #app {
+        border-radius: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      .split { grid-template-columns: 1fr; }
+      .stage-grid { grid-template-columns: repeat(5, minmax(44px, 1fr)); }
+      .stage { min-height: 54px; font-size: 12px; padding: 4px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <dialog id="modal"></dialog>
+  <div id="toast" class="toast"></div>
+  <input id="data-import-file" type="file" accept="application/json,.json" hidden onchange="importDataFile(this)">
+
+  <script>
+    const STORAGE_KEY = "fitness-2050-state-v1";
+    const BASE_DATA_VERSION = "2026-06-18-sheet-v1";
+    const todayISO = () => new Date().toISOString().slice(0, 10);
+    const uid = () => Math.random().toString(36).slice(2, 10);
+    const fmtWeight = value => `${Number(value || 0).toFixed(1).replace(".0", "")}kg`;
+    const stages = [
+      { key: "reserve", label: "储备", value: "5*4" },
+      { key: "level", label: "L值", value: "5*5" },
+      { key: "adv2", label: "进阶2", value: "6*5" },
+      { key: "adv3", label: "进阶3", value: "7*5" },
+      { key: "adv4", label: "进阶4", value: "6*6" }
+    ];
+    const modules = [
+      { id: "home", title: "主页", icon: "⌂" },
+      { id: "strength", title: "增力计划", icon: "力" },
+      { id: "arm", title: "腕力计划", icon: "腕" },
+      { id: "finger", title: "指力计划", icon: "指" },
+      { id: "climb", title: "攀岩打卡", icon: "岩" },
+      { id: "pullup", title: "引体打卡", icon: "引" }
+    ];
+    const strengthSheetSeed = [
+      {
+        id: "seed-卧推",
+        name: "卧推",
+        count: 3,
+        weight: 90,
+        increment: 5,
+        stages: { reserve: "done", level: "done", adv2: "none", adv3: "none", adv4: "none" },
+        history: [85],
+        sourceRow: 4
+      },
+      {
+        id: "seed-引体",
+        name: "引体",
+        count: 1,
+        weight: 20,
+        increment: 5,
+        stages: { reserve: "done", level: "done", adv2: "done", adv3: "done", adv4: "doing" },
+        history: [],
+        sourceRow: 9
+      },
+      {
+        id: "seed-深蹲",
+        name: "深蹲",
+        count: 2,
+        weight: 55,
+        increment: 5,
+        stages: { reserve: "doing", level: "none", adv2: "none", adv3: "none", adv4: "none" },
+        history: [50],
+        sourceRow: 16
+      },
+      {
+        id: "seed-硬拉",
+        name: "硬拉",
+        count: 0,
+        weight: 90,
+        increment: 5,
+        stages: { reserve: "none", level: "none", adv2: "none", adv3: "none", adv4: "none" },
+        history: [],
+        sourceRow: 21
+      },
+      {
+        id: "seed-实力推",
+        name: "实力推",
+        count: 3,
+        weight: 45,
+        increment: 5,
+        stages: { reserve: "done", level: "doing", adv2: "none", adv3: "none", adv4: "none" },
+        history: [40],
+        sourceRow: 28
+      },
+      {
+        id: "seed-杠铃弯举",
+        name: "杠铃弯举",
+        count: 1,
+        weight: 55,
+        increment: 5,
+        stages: { reserve: "doing", level: "none", adv2: "none", adv3: "none", adv4: "none" },
+        history: [50],
+        sourceRow: 34
+      }
+    ];
+
+    const defaultPlanTree = type => {
+      if (type === "arm") {
+        return [
+          { id: uid(), name: "提腕力", items: [] },
+          { id: uid(), name: "提力", items: [] },
+          { id: uid(), name: "旋前力", items: [] },
+          { id: uid(), name: "拇指力", items: [] },
+          { id: uid(), name: "屈腕力", items: [] },
+          { id: uid(), name: "指力", items: [] },
+          { id: uid(), name: "二头力", items: [] },
+          { id: uid(), name: "横向力", items: [] },
+          { id: uid(), name: "勾手力", items: [] },
+          { id: uid(), name: "旋后力", items: [] }
+        ];
+      }
+      return [
+        { id: uid(), name: "深浅板", items: [] },
+        { id: uid(), name: "洞板", items: [] },
+        { id: uid(), name: "捏捏", items: [] }
+      ];
+    };
+
+    const defaultState = () => ({
+      active: "home",
+      strength: [],
+      arm: { focusOnly: false, tree: defaultPlanTree("arm") },
+      finger: { focusOnly: false, tree: defaultPlanTree("finger") },
+      pullup: { startDate: "2026-05-14", calendarMonth: "2026-05", entries: [] },
+      expanded: {},
+      meta: { baseDataVersion: "" }
+    });
+
+    let state = loadState();
+    let undoStack = [];
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : defaultState();
+      } catch {
+        return defaultState();
+      }
+    }
+
+    function isEmptyBaseState(sourceState = state) {
+      const planCount = type => sourceState[type]?.tree?.reduce((sum, cat) => sum + (cat.items?.length || 0), 0) || 0;
+      return (sourceState.strength?.length || 0) === 0
+        && planCount("arm") === 0
+        && planCount("finger") === 0
+        && (sourceState.pullup?.entries?.length || 0) === 0;
+    }
+
+    function strengthBaseData() {
+      return strengthSheetSeed.map(item => ({
+        ...item,
+        stages: { ...item.stages },
+        history: [...item.history],
+        importedAt: todayISO()
+      }));
+    }
+
+    async function readSeed(file) {
+      const response = await fetch(file, { cache: "no-store" });
+      if (!response.ok) throw new Error(file);
+      return response.json();
+    }
+
+    async function initializeBaseData() {
+      if (state.meta?.baseDataVersion === BASE_DATA_VERSION || !isEmptyBaseState()) return;
+      try {
+        const [armTree, fingerTree, pullupPayload] = await Promise.all([
+          readSeed("arm-seed.json"),
+          readSeed("finger-seed.json"),
+          readSeed("pullup-seed.json")
+        ]);
+        state.strength = strengthBaseData();
+        state.arm = { focusOnly: false, tree: armTree };
+        state.finger = { focusOnly: false, tree: fingerTree };
+        state.pullup = {
+          startDate: pullupPayload.startDate || "2026-05-14",
+          calendarMonth: (pullupPayload.startDate || "2026-05-14").slice(0, 7),
+          entries: pullupPayload.entries || []
+        };
+        state.expanded = {};
+        state.meta = { ...(state.meta || {}), baseDataVersion: BASE_DATA_VERSION };
+        normalizePlanTree(state.arm);
+        normalizePlanTree(state.finger);
+        collapsePlan("arm");
+        collapsePlan("finger");
+        saveState();
+        render();
+      } catch {
+        toast("基础数据读取失败");
+      }
+    }
+
+    function normalizePlanTree(plan) {
+      if (!plan?.tree) return;
+      if (plan.tree.some(node => Array.isArray(node.children))) {
+        plan.tree = plan.tree.flatMap(top => Array.isArray(top.children) ? top.children : [top]);
+      }
+      plan.tree.forEach(node => {
+        node.items = node.items || [];
+        delete node.children;
+      });
+    }
+
+    function collapsePlan(type, sourceState = state) {
+      sourceState[type].tree.forEach(cat => {
+        sourceState.expanded[cat.id] = false;
+      });
+    }
+
+    normalizePlanTree(state.arm);
+    normalizePlanTree(state.finger);
+    collapsePlan("arm");
+    collapsePlan("finger");
+    saveState();
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+
+    function setState(mutator, options = {}) {
+      if (!options.skipUndo) {
+        undoStack.push(JSON.stringify(state));
+        if (undoStack.length > 30) undoStack.shift();
+      }
+      mutator(state);
+      saveState();
+      render();
+    }
+
+    function undoLast() {
+      const snapshot = undoStack.pop();
+      if (!snapshot) return;
+      state = JSON.parse(snapshot);
+      saveState();
+      render();
+      toast("已撤回");
+    }
+
+    let swipeState = null;
+
+    function closeSwipeRows(except) {
+      document.querySelectorAll(".swipe-row.open").forEach(row => {
+        if (row !== except) row.classList.remove("open");
+      });
+    }
+
+    function bindSwipeRows() {
+      document.querySelectorAll(".swipe-row").forEach(row => {
+        const card = row.querySelector(".item-card");
+        row.addEventListener("pointerdown", event => {
+          if (event.target.closest("button")) return;
+          closeSwipeRows(row);
+          swipeState = {
+            row,
+            card,
+            startX: event.clientX,
+            startY: event.clientY,
+            base: row.classList.contains("open") ? -158 : 0,
+            dragging: false,
+            locked: null
+          };
+          row.setPointerCapture?.(event.pointerId);
+        });
+        row.addEventListener("pointermove", event => {
+          if (!swipeState || swipeState.row !== row) return;
+          const dx = event.clientX - swipeState.startX;
+          const dy = event.clientY - swipeState.startY;
+          const absX = Math.abs(dx);
+          const absY = Math.abs(dy);
+          if (!swipeState.locked) {
+            if (absY > 10 && absY > absX * 1.2) {
+              swipeState.locked = "scroll";
+              return;
+            }
+            if (absX < 22 || absX < absY * 1.6) return;
+            swipeState.locked = "swipe";
+          }
+          if (swipeState.locked !== "swipe") return;
+          swipeState.dragging = true;
+          event.preventDefault();
+          row.classList.add("dragging");
+          const x = Math.max(-158, Math.min(0, swipeState.base + dx));
+          card.style.transform = `translateX(${x}px)`;
+        });
+        row.addEventListener("pointerup", event => finishSwipe(row, event));
+        row.addEventListener("pointercancel", event => finishSwipe(row, event));
+      });
+    }
+
+    function finishSwipe(row, event) {
+      if (!swipeState || swipeState.row !== row) return;
+      const dx = event.clientX - swipeState.startX;
+      const x = Math.max(-158, Math.min(0, swipeState.base + dx));
+      row.classList.remove("dragging");
+      swipeState.card.style.transform = "";
+      if (swipeState.locked === "swipe" && swipeState.dragging) {
+        row.classList.toggle("open", x < -82);
+      }
+      swipeState = null;
+    }
+
+    function toast(text) {
+      const el = document.getElementById("toast");
+      el.textContent = text;
+      el.classList.add("show");
+      clearTimeout(toast.timer);
+      toast.timer = setTimeout(() => el.classList.remove("show"), 1600);
+    }
+
+    function esc(text) {
+      return String(text ?? "").replace(/[&<>"']/g, m => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+      }[m]));
+    }
+
+    function openModal(title, body, onSubmit) {
+      const dialog = document.getElementById("modal");
+      dialog.innerHTML = `
+        <form method="dialog" class="modal-body">
+          <div class="modal-head">
+            <h3>${esc(title)}</h3>
+            <button class="icon ghost" value="cancel" formnovalidate title="关闭">×</button>
+          </div>
+          <div class="modal-content">${body}</div>
+          <div class="row-actions modal-actions">
+            <button value="cancel" formnovalidate>取消</button>
+            <button class="primary" value="ok">保存</button>
+          </div>
+        </form>`;
+      dialog.onclose = () => {
+        if (dialog.returnValue !== "ok") return;
+        const data = Object.fromEntries(new FormData(dialog.querySelector("form")).entries());
+        onSubmit(data);
+      };
+      dialog.showModal();
+    }
+
+    function exportData() {
+      const payload = {
+        app: "fitness-2050",
+        version: BASE_DATA_VERSION,
+        exportedAt: new Date().toISOString(),
+        data: state
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `fitness-2050-${todayISO()}.json`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      toast("已导出数据");
+    }
+
+    function chooseDataImport() {
+      const input = document.getElementById("data-import-file");
+      input.value = "";
+      input.click();
+    }
+
+    function importDataFile(input) {
+      const file = input.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const payload = JSON.parse(reader.result);
+          const next = payload?.data || payload;
+          if (!isValidImportedState(next)) throw new Error("invalid");
+          undoStack.push(JSON.stringify(state));
+          if (undoStack.length > 30) undoStack.shift();
+          state = next;
+          state.active = "home";
+          state.meta = { ...(state.meta || {}), importedAt: new Date().toISOString() };
+          normalizePlanTree(state.arm);
+          normalizePlanTree(state.finger);
+          state.expanded = state.expanded || {};
+          collapsePlan("arm");
+          collapsePlan("finger");
+          saveState();
+          render();
+          toast("已导入数据");
+        } catch {
+          toast("导入失败，文件不正确");
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function isValidImportedState(next) {
+      return !!next
+        && Array.isArray(next.strength)
+        && Array.isArray(next.arm?.tree)
+        && Array.isArray(next.finger?.tree)
+        && Array.isArray(next.pullup?.entries);
+    }
+
+    function toggleNewItemWeightFields(select) {
+      const form = select.closest("form");
+      const isPair = select.value === "左右";
+      form.querySelectorAll("[data-pair-weights]").forEach(field => {
+        field.style.display = isPair ? "grid" : "none";
+      });
+      form.querySelector("[data-single-weight]").style.display = isPair ? "none" : "grid";
+    }
+
+    function weightInput(name, value = "") {
+      return `<input name="${name}" inputmode="decimal" type="number" min="0" step="0.5" value="${esc(value)}">`;
+    }
+
+    function render() {
+      document.getElementById("app").innerHTML = `
+        <div class="app">
+          <aside class="sidebar">
+            <div class="brand">
+              <div class="brand-mark">50</div>
+              <div><h1>2050 训练计划</h1><div class="meta">本地记录</div></div>
+            </div>
+            <nav class="nav">
+              ${modules.map(m => `
+                <button class="${state.active === m.id ? "active" : ""}" onclick="go('${m.id}')">
+                  <span class="nav-icon">${m.icon}</span><span>${m.title}</span>
+                </button>`).join("")}
+            </nav>
+          </aside>
+          <main>${renderPage()}</main>
+        </div>`;
+      bindSwipeRows();
+    }
+
+    function go(id) {
+      setState(s => { s.active = id; });
+    }
+
+    function pageHeader(title, subtitle, actions = "") {
+      return `<div class="topbar">
+        <div class="title"><h2>${esc(title)}</h2>${subtitle ? `<p>${esc(subtitle)}</p>` : ""}</div>
+        <div class="toolbar">${actions}</div>
+      </div>`;
+    }
+
+    function pullupHeader(total, checkedDays, missed, actions = "") {
+      return `<div class="topbar pullup-topbar">
+        <div class="pullup-title">
+          <h2>引体打卡</h2>
+          <div class="pullup-total">${total}</div>
+          <div class="pullup-meta"><span>打卡 ${checkedDays} 天</span><span>缺席 ${missed} 天</span></div>
+        </div>
+        <div class="toolbar">${actions}</div>
+      </div>`;
+    }
+
+    function renderPage() {
+      if (state.active === "home") return renderHome();
+      if (state.active === "strength") return renderStrength();
+      if (state.active === "arm") return renderPlan("arm", "腕力计划", "训练分类与条目");
+      if (state.active === "finger") return renderPlan("finger", "指力计划", "指力训练和极限数据");
+      if (state.active === "climb") return renderClimb();
+      if (state.active === "pullup") return renderPullup();
+      return "";
+    }
+
+    function renderHome() {
+      const cards = modules.filter(m => m.id !== "home").map(m => `
+        <button class="item-card" onclick="go('${m.id}')" style="text-align:left; min-height:122px">
+          <div class="item-head">
+            <div>
+              <div class="item-name">${m.title}</div>
+              <div class="meta">${homeMeta(m.id)}</div>
+            </div>
+            <span class="nav-icon">${m.icon}</span>
+          </div>
+        </button>`).join("");
+      const actions = `<button class="icon" onclick="chooseDataImport()" title="导入数据">⇩</button><button class="icon" onclick="exportData()" title="导出数据">⇧</button>`;
+      return pageHeader("主页", "五个训练模块", actions) + `<section class="grid">${cards}</section>`;
+    }
+
+    function homeMeta(id) {
+      if (id === "strength") return `${state.strength.length} 个项目`;
+      if (id === "arm") return `${countPlanItems("arm")} 个条目`;
+      if (id === "finger") return `${countPlanItems("finger")} 个条目`;
+      if (id === "pullup") return `${state.pullup.entries.length} 天记录`;
+      return "待接入";
+    }
+
+    function countPlanItems(type) {
+      return state[type].tree.reduce((sum, node) => sum + node.items.length, 0);
+    }
+
+    function renderStrength() {
+      const actions = `<button class="icon" onclick="importStrengthSheet()" title="导入表格">⇩</button><button class="icon primary" onclick="newStrength()" title="新建">＋</button><button class="icon" onclick="undoLast()" ${undoStack.length ? "" : "disabled"} title="撤回">↶</button>`;
+      const list = state.strength.length ? state.strength.map(renderStrengthItem).join("") : `<div class="empty">暂无项目</div>`;
+      return pageHeader("增力计划", "", actions) + `<section class="grid">${list}</section>`;
+    }
+
+    function importStrengthSheet() {
+      const preview = strengthSheetSeed.map(item => {
+        const active = stages.filter(stage => item.stages[stage.key] !== "none")
+          .map(stage => `${stage.label}${item.stages[stage.key] === "done" ? "已完成" : "进行中"}`)
+          .join(" / ");
+        return `<div class="pill blue">${esc(item.name)} · ${fmtWeight(item.weight)} · ${active || "未开始"}</div>`;
+      }).join("");
+      openModal("导入增力表格", `
+        <div class="meta">将覆盖当前增力项目，导入表格中已有颜色进度的当前重量。</div>
+        <div class="history">${preview}</div>`, () => {
+          setState(s => {
+            s.strength = strengthSheetSeed.map(item => ({
+              ...item,
+              stages: { ...item.stages },
+              history: [...item.history],
+              importedAt: todayISO()
+            }));
+          });
+          toast("已导入增力计划表格数据");
+      });
+    }
+
+    function newStrength() {
+      openModal("新建增力项目", `
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <label>名称<input name="name" required placeholder="卧推"></label>
+          <label>训练次数<input name="count" type="number" min="0" step="1" value="0"></label>
+          <label>起始重量${weightInput("weight", 20)}</label>
+          <label>递增<select name="increment"><option value="2.5">2.5kg</option><option value="5">5kg</option></select></label>
+        </div>`, data => {
+          setState(s => s.strength.push({
+            id: uid(),
+            name: data.name.trim(),
+            count: Number(data.count || 0),
+            weight: Number(data.weight || 0),
+            increment: Number(data.increment || 2.5),
+            stages: Object.fromEntries(stages.map(x => [x.key, "none"])),
+            history: []
+          }));
+      });
+    }
+
+    function renderStrengthItem(item) {
+      return `<div class="swipe-row" data-swipe-id="${item.id}" data-swipe-type="strength">
+      <div class="swipe-actions">
+        <button onclick="editStrength('${item.id}')">编辑</button>
+        <button class="danger" onclick="deleteStrength('${item.id}')">删除</button>
+      </div>
+      <article class="item-card">
+        <div class="item-head">
+          <div class="title-line">
+            <div class="item-name">${esc(item.name)}</div>
+            <div class="count-line">
+              <span>${Number(item.count || 0)}</span>
+              <button class="icon" title="训练次数加一" onclick="incStrengthCount('${item.id}')">＋</button>
+            </div>
+          </div>
+          <span class="pill blue">${fmtWeight(item.weight)}</span>
+        </div>
+        <div class="stage-grid">
+          ${stages.map(st => {
+            const status = item.stages[st.key] || "none";
+            return `<button class="stage ${status}" onclick="cycleStrengthStage('${item.id}','${st.key}')">
+              <strong>${st.value}</strong><small>${st.label}</small>
+            </button>`;
+          }).join("")}
+        </div>
+      </article>
+      </div>`;
+    }
+
+    function cycleStrengthStage(id, key) {
+      setState(s => {
+        const item = s.strength.find(x => x.id === id);
+        const next = { none: "doing", doing: "done", done: "none" };
+        item.stages[key] = next[item.stages[key] || "none"];
+        if (stages.every(st => item.stages[st.key] === "done")) {
+          item.history.unshift(item.weight);
+          item.weight = Number(item.weight) + Number(item.increment);
+          item.stages = Object.fromEntries(stages.map(x => [x.key, "none"]));
+          toast(`${item.name} 升级到 ${fmtWeight(item.weight)}`);
+        }
+      });
+    }
+
+    function incStrengthCount(id) {
+      setState(s => { s.strength.find(x => x.id === id).count += 1; });
+    }
+
+    function editStrength(id) {
+      const item = state.strength.find(x => x.id === id);
+      openModal("编辑增力项目", `
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <label>名称<input name="name" required value="${esc(item.name)}"></label>
+          <label>训练次数<input name="count" type="number" min="0" step="1" value="${item.count}"></label>
+          <label>当前重量${weightInput("weight", item.weight)}</label>
+          <label>递增<select name="increment"><option value="2.5" ${item.increment == 2.5 ? "selected" : ""}>2.5kg</option><option value="5" ${item.increment == 5 ? "selected" : ""}>5kg</option></select></label>
+        </div>`, data => {
+          setState(s => Object.assign(s.strength.find(x => x.id === id), {
+            name: data.name.trim(),
+            count: Number(data.count || 0),
+            weight: Number(data.weight || 0),
+            increment: Number(data.increment || 2.5)
+          }));
+      });
+    }
+
+    function deleteStrength(id) {
+      setState(s => { s.strength = s.strength.filter(x => x.id !== id); });
+    }
+
+    function renderPlan(type, title, subtitle) {
+      const plan = state[type];
+      const importAction = type === "arm" || type === "finger" ? `<button class="icon" onclick="importPlanSheet('${type}')" title="导入表格">⇩</button>` : "";
+      const actions = `
+        ${importAction}
+        <button class="icon ${plan.focusOnly ? "primary" : ""}" onclick="toggleFocus('${type}')" title="重点筛选">★</button>
+        <button class="icon primary" onclick="newTop('${type}')" title="新建分类">＋</button>
+        <button class="icon" onclick="undoLast()" ${undoStack.length ? "" : "disabled"} title="撤回">↶</button>`;
+      return pageHeader(title, subtitle, actions) + `<section class="tree">${plan.tree.map(cat => renderCategory(type, cat)).join("")}</section>`;
+    }
+
+    async function importPlanSheet(type) {
+      let tree = [];
+      const file = type === "arm" ? "arm-seed.json" : "finger-seed.json";
+      const label = type === "arm" ? "腕力" : "指力";
+      try {
+        const response = await fetch(file, { cache: "no-store" });
+        tree = await response.json();
+      } catch {
+        toast(`${label}表格数据读取失败`);
+        return;
+      }
+      const total = tree.reduce((sum, cat) => sum + cat.items.length, 0);
+      openModal(`导入${label}表格`, `
+        <div class="meta">将覆盖当前${label}计划，导入 ${tree.length} 个分类、${total} 个条目。</div>
+        <div class="history">${tree.slice(0, 8).map(cat => `<span class="pill blue">${esc(cat.name)} · ${cat.items.length}</span>`).join("")}</div>`, () => {
+          setState(s => {
+            s[type].tree = tree;
+            s[type].focusOnly = false;
+            collapsePlan(type, s);
+          });
+          toast(`已导入${label}计划表格数据`);
+      });
+    }
+
+    function renderCategory(type, cat) {
+      const open = type === "arm" || type === "finger" ? state.expanded[cat.id] === true : state.expanded[cat.id] !== false;
+      const items = state[type].focusOnly ? cat.items.filter(x => x.focus) : cat.items;
+      return `<div class="tree-row">
+        <button class="tree-summary" onclick="toggleExpand('${cat.id}')">
+          <span>${esc(cat.name)} <span class="meta">${items.length}</span></span><span>${open ? "⌃" : "⌄"}</span>
+        </button>
+        ${open ? `<div class="tree-children">
+          <div class="detail-list">${items.length ? items.map(item => renderPlanItem(type, cat.id, item)).join("") : `<div class="empty">暂无条目</div>`}</div>
+          <div class="row-actions"><button onclick="newPlanItem('${type}','${cat.id}')">＋ 条目</button></div>
+        </div>` : ""}
+      </div>`;
+    }
+
+    function itemSides(item) {
+      return (item.sides?.length ? item.sides : ["单项"]).filter(Boolean);
+    }
+
+    function ensureSideData(item) {
+      const sides = itemSides(item);
+      item.sideWeights = item.sideWeights || {};
+      sides.forEach(side => {
+        if (item.sideWeights[side] === undefined) item.sideWeights[side] = Number(item.weight || 0);
+      });
+      item.weight = Math.max(...sides.map(side => Number(item.sideWeights[side] || 0)));
+      return sides;
+    }
+
+    function maxRecordBySide(item, side) {
+      return (item.maxRecords || []).filter(record => (record.side || "单项") === side)
+        .sort((a, b) => Number(b.weight || 0) - Number(a.weight || 0))[0];
+    }
+
+    function renderSideMetrics(item) {
+      const sides = ensureSideData(item);
+      return `<div class="side-metrics">${sides.map(side => {
+        const maxRecord = maxRecordBySide(item, side);
+        return `<div class="side-row">
+          <span class="side-badge">${esc(side)}</span>
+          <span class="pill green">组 ${fmtWeight(item.sideWeights[side])}</span>
+          <span class="pill blue">极 ${maxRecord ? fmtWeight(maxRecord.weight) : "未填"}</span>
+        </div>`;
+      }).join("")}</div>`;
+    }
+
+    function renderMaxHistory(item) {
+      const records = item.maxRecords || [];
+      if (!records.length) return "";
+      return `<div class="history">极限记录：${records.slice(0, 6).map(r => `${esc(r.side || "单项")} ${r.date} ${fmtWeight(r.weight)}`).join(" / ")}</div>`;
+    }
+
+    function sideOptions(item, includeAll = false) {
+      const sides = itemSides(item);
+      return `${includeAll && sides.length > 1 ? `<option value="全部">全部</option>` : ""}${sides.map(side => `<option value="${esc(side)}">${esc(side)}</option>`).join("")}`;
+    }
+
+    function renderPlanItem(type, catId, item) {
+      ensureSideData(item);
+      return `<div class="swipe-row" data-swipe-id="${item.id}" data-swipe-type="${type}">
+      <div class="swipe-actions">
+        <button onclick="editPlanItem('${type}','${catId}','${item.id}')">编辑</button>
+        <button class="danger" onclick="deletePlanItem('${type}','${catId}','${item.id}')">删除</button>
+      </div>
+      <article class="item-card ${item.focus ? "focus" : ""}">
+        <div class="item-head">
+          <div>
+            <div class="title-line">
+              <span class="item-name">${esc(item.name)}</span>
+              <span class="meta">LV${item.level} · 第 ${item.count} 次<button class="inline-plus" title="训练次数加一" onclick="incPlanCount('${type}','${catId}','${item.id}')">＋</button></span>
+            </div>
+          </div>
+          <button class="icon ${item.focus ? "primary" : ""}" title="重点" onclick="toggleItemFocus('${type}','${catId}','${item.id}')">★</button>
+        </div>
+        <div class="plan-body">
+          <div>
+            ${renderSideMetrics(item)}
+          </div>
+          <div class="side-actions">
+            <button title="升级" onclick="upgradePlanItem('${type}','${catId}','${item.id}')">升</button>
+            <button title="极限" onclick="editMax('${type}','${catId}','${item.id}')">极</button>
+          </div>
+        </div>
+      </article>
+      </div>`;
+    }
+
+    function findPlanItem(type, catId, itemId) {
+      const cat = state[type].tree.find(x => x.id === catId);
+      return { cat, item: cat.items.find(x => x.id === itemId) };
+    }
+
+    function toggleExpand(id) {
+      setState(s => { s.expanded[id] = s.expanded[id] === false; });
+    }
+
+    function toggleFocus(type) {
+      setState(s => { s[type].focusOnly = !s[type].focusOnly; });
+    }
+
+    function newTop(type) {
+      openModal("新建分类", `<label>名称<input name="name" required></label>`, data => {
+        setState(s => s[type].tree.push({ id: uid(), name: data.name.trim(), items: [] }));
+      });
+    }
+
+    function newPlanItem(type, catId) {
+      openModal("新建条目", `
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <label>名称<input name="name" required></label>
+          <label>类型<select name="sides" onchange="toggleNewItemWeightFields(this)"><option value="左右">左右</option><option value="单项">单项</option></select></label>
+          <label data-pair-weights>右手重量${weightInput("weight_右", 5)}</label>
+          <label data-pair-weights>左手重量${weightInput("weight_左", 5)}</label>
+          <label data-single-weight style="display:none">起始重量${weightInput("weight_单项", 5)}</label>
+          <label>极限重量${weightInput("maxWeight", "")}</label>
+        </div>`, data => {
+          setState(s => {
+            const cat = s[type].tree.find(x => x.id === catId);
+            const sides = data.sides === "左右" ? ["右", "左"] : ["单项"];
+            const sideWeights = Object.fromEntries(sides.map(side => [side, Number(data[`weight_${side}`] || 0)]));
+            const maxRecords = data.maxWeight ? sides.map(side => ({ date: todayISO(), weight: Number(data.maxWeight), side })) : [];
+            cat.items.push({
+              id: uid(),
+              name: data.name.trim(),
+              sides,
+              sideWeights,
+              weight: Number(data.weight || 0),
+              level: 1,
+              count: 0,
+              focus: false,
+              history: [],
+              maxRecords
+            });
+          });
+      });
+    }
+
+    function toggleItemFocus(type, catId, itemId) {
+      setState(s => { findPlanItem(type, catId, itemId).item.focus = !findPlanItem(type, catId, itemId).item.focus; });
+    }
+
+    function incPlanCount(type, catId, itemId) {
+      setState(s => { findPlanItem(type, catId, itemId).item.count += 1; });
+    }
+
+    function upgradePlanItem(type, catId, itemId) {
+      const { item } = findPlanItem(type, catId, itemId);
+      ensureSideData(item);
+      openModal("升级重量", `
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+            <label>手别<select name="side">${sideOptions(item, true)}</select></label>
+            <label>增加重量${weightInput("add", 2.5)}</label>
+        </div>`, data => {
+          setState(s => {
+            const target = findPlanItem(type, catId, itemId).item;
+            const sides = ensureSideData(target);
+            const selected = data.side === "全部" ? sides : [data.side || sides[0]];
+            selected.forEach(side => {
+              target.history.unshift({ side, weight: target.sideWeights[side] });
+              target.sideWeights[side] = Number(target.sideWeights[side] || 0) + Number(data.add || 2.5);
+            });
+            target.weight = Math.max(...sides.map(side => Number(target.sideWeights[side] || 0)));
+            target.level += 1;
+          });
+      });
+    }
+
+    function editMax(type, catId, itemId) {
+      const { item } = findPlanItem(type, catId, itemId);
+      ensureSideData(item);
+      openModal("更新极限重量", `
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <label>手别<select name="side">${sideOptions(item)}</select></label>
+          <label>日期<input name="date" type="date" value="${todayISO()}"></label>
+          <label>极限重量${weightInput("weight", "")}</label>
+        </div>`, data => {
+          setState(s => {
+            const target = findPlanItem(type, catId, itemId).item;
+            target.maxRecords = target.maxRecords || [];
+            target.maxRecords.unshift({ date: data.date || todayISO(), weight: Number(data.weight || 0), side: data.side || itemSides(target)[0] });
+          });
+      });
+    }
+
+    function editPlanItem(type, catId, itemId) {
+      const { item } = findPlanItem(type, catId, itemId);
+      ensureSideData(item);
+      const sideInputs = itemSides(item).map(side => `<label>${esc(side)}当前重量${weightInput(`weight_${side}`, item.sideWeights[side])}</label>`).join("");
+      openModal("编辑条目", `
+        <div class="form-grid" style="grid-template-columns:1fr 1fr">
+          <label>名称<input name="name" required value="${esc(item.name)}"></label>
+          <label>训练次数<input name="count" type="number" min="0" step="1" value="${item.count}"></label>
+          <label>等级<input name="level" type="number" min="1" step="1" value="${item.level}"></label>
+          ${sideInputs}
+        </div>`, data => {
+          setState(s => {
+            const target = findPlanItem(type, catId, itemId).item;
+            const sides = ensureSideData(target);
+            target.name = data.name.trim();
+            target.count = Number(data.count || 0);
+            target.level = Number(data.level || 1);
+            sides.forEach(side => {
+              target.sideWeights[side] = Number(data[`weight_${side}`] || 0);
+            });
+            target.weight = Math.max(...sides.map(side => Number(target.sideWeights[side] || 0)));
+          });
+      });
+    }
+
+    function deletePlanItem(type, catId, itemId) {
+      setState(s => {
+        const cat = s[type].tree.find(x => x.id === catId);
+        cat.items = cat.items.filter(x => x.id !== itemId);
+      });
+    }
+
+    function renderClimb() {
+      return pageHeader("攀岩打卡", "入口保留", "") + `<section class="band"><div class="empty">待复刻</div></section>`;
+    }
+
+    function renderPullup() {
+      const entries = [...state.pullup.entries].sort((a, b) => b.date.localeCompare(a.date));
+      const total = state.pullup.entries.reduce((sum, e) => sum + entryTotal(e), 0);
+      const missed = countMissed();
+      state.pullup.calendarMonth = state.pullup.calendarMonth || todayISO().slice(0, 7);
+      const actions = `<button class="icon" onclick="importPullupSheet()" title="导入表格">⇩</button><button class="icon" onclick="editPullupStart()" title="设置起始日">⚙</button><button class="icon" onclick="undoLast()" ${undoStack.length ? "" : "disabled"} title="撤回">↶</button>`;
+      return pullupHeader(total, state.pullup.entries.length, missed, actions) + `
+        <section class="section band">
+          <div class="calendar-head">
+            <button class="icon" onclick="shiftPullupMonth(-1)" title="上个月">‹</button>
+            <strong>${formatMonth(state.pullup.calendarMonth)}</strong>
+            <button class="icon" onclick="shiftPullupMonth(1)" title="下个月">›</button>
+          </div>
+          <div class="calendar">${renderCalendar()}</div>
+        </section>
+        <section class="section grid">
+          ${entries.length ? entries.map(renderPullupEntry).join("") : `<div class="empty">暂无打卡</div>`}
+        </section>
+        <div class="pullup-fab-spacer"></div>
+        <button class="primary pullup-fab" onclick="newPullupEntry()">＋ 打卡</button>`;
+    }
+
+    function formatMonth(month) {
+      const [year, value] = month.split("-");
+      return `${year}年${Number(value)}月`;
+    }
+
+    function shiftPullupMonth(delta) {
+      setState(s => {
+        const [year, month] = (s.pullup.calendarMonth || todayISO().slice(0, 7)).split("-").map(Number);
+        const date = new Date(year, month - 1 + delta, 1);
+        s.pullup.calendarMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}`;
+      });
+    }
+
+    async function importPullupSheet() {
+      let payload = null;
+      try {
+        const response = await fetch("pullup-seed.json", { cache: "no-store" });
+        payload = await response.json();
+      } catch {
+        toast("引体表格数据读取失败");
+        return;
+      }
+      const total = payload.entries.reduce((sum, entry) => sum + entry.groups.reduce((a, n) => a + Number(n || 0), 0), 0);
+      openModal("导入引体表格", `
+        <div class="meta">将覆盖当前引体记录，导入 ${payload.entries.length} 天、总计 ${total} 个。</div>
+        <div class="history">${payload.entries.slice(0, 6).map(entry => `<span class="pill blue">${entry.date} · ${entry.groups.reduce((a, n) => a + Number(n || 0), 0)}</span>`).join("")}</div>`, () => {
+          setState(s => {
+            s.pullup.startDate = payload.startDate || "2026-05-14";
+            s.pullup.entries = payload.entries;
+          });
+          toast("已导入引体打卡表格数据");
+      });
+    }
+
+    function entryTotal(entry) {
+      return entry.groups.reduce((sum, n) => sum + Number(n || 0), 0);
+    }
+
+    function editPullupStart() {
+      openModal("起始时间", `<label>日期<input name="date" type="date" value="${state.pullup.startDate}"></label>`, data => {
+        setState(s => { s.pullup.startDate = data.date || "2026-05-14"; });
+      });
+    }
+
+    function newPullupEntry(date = todayISO()) {
+      const existing = state.pullup.entries.find(x => x.date === date);
+      if (existing) return editPullupEntry(existing.id);
+      openModal("引体打卡", `
+        <label>日期<input name="date" type="date" value="${date}"></label>
+        <div class="pullup-group-list" data-pullup-groups>
+          ${pullupGroupField(1, 10, false)}
+          <button type="button" class="icon pullup-group-add" onclick="addPullupDraftGroup(this)" title="增加一组">＋</button>
+        </div>`, data => {
+          const groups = Object.keys(data).filter(k => k.startsWith("g")).sort((a, b) => Number(a.slice(1)) - Number(b.slice(1))).map(k => Number(data[k] || 0)).filter(n => n > 0);
+          setState(s => s.pullup.entries.push({ id: uid(), date: data.date || todayISO(), groups: groups.length ? groups : [0] }));
+      });
+    }
+
+    function pullupGroupField(index, value = 10, removable = true) {
+      return `<label class="pullup-group-field"><span class="pullup-group-label">第${index}组</span><input name="g${index}" type="number" min="0" step="1" value="${value}">${removable ? `<button type="button" class="pullup-group-delete" onclick="deletePullupDraftGroup(this)" title="删除本组">×</button>` : ""}</label>`;
+    }
+
+    function addPullupDraftGroup(button) {
+      const list = button.closest("[data-pullup-groups]");
+      const next = list.querySelectorAll("label").length + 1;
+      button.insertAdjacentHTML("beforebegin", pullupGroupField(next, 10, true));
+    }
+
+    function deletePullupDraftGroup(button) {
+      const list = button.closest("[data-pullup-groups]");
+      button.closest("label").remove();
+      renumberPullupDraftGroups(list);
+    }
+
+    function renumberPullupDraftGroups(list) {
+      list.querySelectorAll("label").forEach((label, index) => {
+        label.querySelector(".pullup-group-label").textContent = `第${index + 1}组`;
+        label.querySelector("input").name = `g${index + 1}`;
+      });
+    }
+
+    function renderPullupEntry(entry) {
+      return `<div class="swipe-row" data-swipe-id="${entry.id}" data-swipe-type="pullup">
+      <div class="swipe-actions">
+        <button onclick="editPullupEntry('${entry.id}')">编辑</button>
+        <button class="danger" onclick="deletePullupEntry('${entry.id}')">删除</button>
+      </div>
+      <article class="item-card">
+        <div class="item-head">
+          <div>
+            <div class="item-name">${entry.date}</div>
+            <div class="meta">${entry.groups.length} 组</div>
+          </div>
+          <span class="pill green">${entryTotal(entry)}</span>
+        </div>
+        <div class="history">${entry.groups.map((g, i) => `第${i + 1}组 ${g}`).join(" / ")}</div>
+      </article>
+      </div>`;
+    }
+
+    function addPullupGroup(id) {
+      openModal("增加一组", `<label>数量<input name="count" type="number" min="0" step="1" value="10"></label>`, data => {
+        setState(s => s.pullup.entries.find(x => x.id === id).groups.push(Number(data.count || 0)));
+      });
+    }
+
+    function editPullupEntry(id) {
+      const entry = state.pullup.entries.find(x => x.id === id);
+      const fields = entry.groups.map((g, i) => pullupGroupField(i + 1, g, true)).join("");
+      openModal("编辑打卡", `
+        <label>日期<input name="date" type="date" value="${entry.date}"></label>
+        <div class="pullup-group-list" data-pullup-groups>
+          ${fields}
+          <button type="button" class="icon pullup-group-add" onclick="addPullupDraftGroup(this)" title="增加一组">＋</button>
+        </div>`, data => {
+          setState(s => {
+            const target = s.pullup.entries.find(x => x.id === id);
+            target.date = data.date || target.date;
+            target.groups = Object.keys(data).filter(k => k.startsWith("g")).sort((a, b) => Number(a.slice(1)) - Number(b.slice(1))).map(k => Number(data[k] || 0)).filter(n => n > 0);
+          });
+      });
+    }
+
+    function deletePullupEntry(id) {
+      setState(s => { s.pullup.entries = s.pullup.entries.filter(x => x.id !== id); });
+    }
+
+    function countMissed() {
+      const start = new Date(state.pullup.startDate + "T00:00:00");
+      const end = new Date(todayISO() + "T00:00:00");
+      if (start > end) return 0;
+      const hit = new Set(state.pullup.entries.map(e => e.date));
+      let missed = 0;
+      for (let d = new Date(start); d <= end; d.setDate(d.getDate() + 1)) {
+        if (!hit.has(d.toISOString().slice(0, 10))) missed += 1;
+      }
+      return missed;
+    }
+
+    function renderCalendar() {
+      const [selectedYear, selectedMonth] = (state.pullup.calendarMonth || todayISO().slice(0, 7)).split("-").map(Number);
+      const now = new Date(selectedYear, selectedMonth - 1, 1);
+      const year = now.getFullYear();
+      const month = now.getMonth();
+      const first = new Date(year, month, 1);
+      const days = new Date(year, month + 1, 0).getDate();
+      const pad = first.getDay();
+      const hit = new Map(state.pullup.entries.map(e => [e.date, entryTotal(e)]));
+      const start = state.pullup.startDate;
+      const cells = [];
+      for (let i = 0; i < pad; i++) cells.push(`<div class="day blank"></div>`);
+      for (let day = 1; day <= days; day++) {
+        const iso = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+        const total = hit.get(iso);
+        const cls = total ? "hit" : (iso >= start && iso <= todayISO() ? "miss" : "");
+        cells.push(`<button class="day ${cls}" onclick="newPullupEntry('${iso}')"><span class="day-date">${day}</span><span class="day-count">${total || ""}</span></button>`);
+      }
+      return cells.join("");
+    }
+
+    render();
+    initializeBaseData();
+  </script>
+</body>
+</html>
