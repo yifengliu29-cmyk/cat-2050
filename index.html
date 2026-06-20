@@ -48,8 +48,8 @@
     }
 
     #app.home-root {
-      width: min(941px, calc((100dvh - 28px) * 941 / 1672), calc(100vw - 28px));
-      height: min(1672px, calc(100dvh - 28px), calc((100vw - 28px) * 1672 / 941));
+      width: min(450px, calc((100dvh - 28px) * 9 / 20), calc(100vw - 28px));
+      height: min(1000px, calc(100dvh - 28px), calc((100vw - 28px) * 20 / 9));
       border: 0;
       border-radius: 0;
       background: #fff;
@@ -72,16 +72,20 @@
     }
 
     .home-screen {
-      position: relative;
       width: 100%;
       height: 100%;
+      display: grid;
+      grid-template-rows: 11.5% minmax(0, 1fr) 8.6%;
       overflow: hidden;
       background: #fff;
     }
 
-    .home-reference {
-      position: absolute;
-      inset: 0;
+    .home-header {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-header-image {
       width: 100%;
       height: 100%;
       object-fit: fill;
@@ -90,8 +94,8 @@
     }
 
     .home-hotspot,
-    .home-nav-hotspot {
-      position: absolute;
+    .home-visual-card,
+    .home-bottom-nav button {
       min-height: 0;
       padding: 0;
       border: 0;
@@ -102,39 +106,96 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    .home-hotspot {
+      position: absolute;
+    }
+
     .home-hotspot:hover,
-    .home-nav-hotspot:hover {
+    .home-visual-card:hover,
+    .home-bottom-nav button:hover {
       border: 0;
     }
 
     .home-hotspot:focus-visible,
-    .home-nav-hotspot:focus-visible {
+    .home-visual-card:focus-visible,
+    .home-bottom-nav button:focus-visible {
       outline: 3px solid rgba(255, 255, 255, .92);
       outline-offset: -4px;
     }
 
-    .home-import { left: 72.23%; top: 3.29%; width: 9.05%; height: 5.14%; }
-    .home-export { left: 84.26%; top: 3.29%; width: 9.05%; height: 5.14%; }
-    .home-card-strength { left: 3.94%; top: 12.67%; width: 92.02%; height: 15.78%; }
-    .home-card-arm { left: 3.94%; top: 29.53%; width: 92.02%; height: 15.36%; }
-    .home-card-finger { left: 3.94%; top: 45.85%; width: 92.02%; height: 14.52%; }
-    .home-card-climb { left: 3.94%; top: 61.27%; width: 92.02%; height: 14.41%; }
-    .home-card-pullup { left: 3.94%; top: 76.69%; width: 92.02%; height: 14.05%; }
+    .home-import { left: 72.23%; top: 29.6%; width: 9.05%; height: 46.2%; }
+    .home-export { left: 84.26%; top: 29.6%; width: 9.05%; height: 46.2%; }
 
-    .home-nav-hotspots {
-      position: absolute;
-      left: 4.8%;
-      right: 4.8%;
-      top: 92.2%;
-      bottom: .6%;
+    .home-card-list {
+      min-height: 0;
       display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
+      grid-template-rows: repeat(5, minmax(0, 1fr));
+      gap: 1.05%;
+      padding: 1.5% 3.94% 1.2%;
     }
 
-    .home-nav-hotspot {
+    .home-visual-card {
       position: relative;
       width: 100%;
       height: 100%;
+      overflow: hidden;
+      border-radius: 4.5% / 14%;
+    }
+
+    .home-visual-card img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .home-bottom-nav {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1px;
+      padding: 5px 5px 4px;
+      border-radius: 18px 18px 0 0;
+      background: linear-gradient(105deg, #a38adb 0%, #c5b4ee 48%, #9d79df 100%);
+      box-shadow: 0 -7px 20px rgba(116, 80, 183, .14);
+    }
+
+    .home-bottom-nav button {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+      justify-items: center;
+      align-items: center;
+      gap: 1px;
+      border-radius: 10px;
+      color: rgba(255, 255, 255, .96);
+      font-size: clamp(8px, 2.7vw, 12px);
+      line-height: 1;
+    }
+
+    .home-bottom-nav button.active {
+      background: rgba(255, 255, 255, .96);
+      color: #8455dd;
+    }
+
+    .home-nav-icon {
+      width: clamp(23px, 7vw, 32px);
+      aspect-ratio: 1;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .12);
+    }
+
+    .home-nav-icon::before {
+      content: "";
+      width: 72%;
+      height: 72%;
+      background: currentColor;
+      -webkit-mask: var(--icon) center / contain no-repeat;
+      mask: var(--icon) center / contain no-repeat;
     }
 
     .sr-only {
@@ -956,8 +1017,8 @@
 
     @media (max-width: 430px) {
       #app.home-root {
-        width: 100vw;
-        height: 100dvh;
+        width: min(100vw, calc(100dvh * 9 / 20));
+        height: min(100dvh, calc(100vw * 20 / 9));
       }
     }
   </style>
@@ -1423,18 +1484,19 @@
     }
 
     function renderHome() {
+      const cardAssets = { strength: "strength-cat", arm: "arm-cat", finger: "finger-cat", climb: "climb-cat", pullup: "pullup-cat" };
       return `<section class="home-screen" aria-label="主页">
-        <img class="home-reference" src="assets/reference/home-original.png" alt="" draggable="false">
-        <button class="home-hotspot home-import" onclick="chooseDataImport()" title="导入数据"><span class="sr-only">导入数据</span></button>
-        <button class="home-hotspot home-export" onclick="exportData()" title="导出数据"><span class="sr-only">导出数据</span></button>
-        <button class="home-hotspot home-card-strength" onclick="go('strength')"><span class="sr-only">增力计划</span></button>
-        <button class="home-hotspot home-card-arm" onclick="go('arm')"><span class="sr-only">腕力计划</span></button>
-        <button class="home-hotspot home-card-finger" onclick="go('finger')"><span class="sr-only">指力计划</span></button>
-        <button class="home-hotspot home-card-climb" onclick="go('climb')"><span class="sr-only">攀岩打卡</span></button>
-        <button class="home-hotspot home-card-pullup" onclick="go('pullup')"><span class="sr-only">引体打卡</span></button>
-        <div class="home-nav-hotspots" aria-label="主页导航">
-          ${modules.map(module => `<button class="home-nav-hotspot" onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
+        <header class="home-header">
+          <img class="home-header-image" src="assets/backgrounds/header-texture.png" alt="" draggable="false">
+          <button class="home-hotspot home-import" onclick="chooseDataImport()" title="导入数据"><span class="sr-only">导入数据</span></button>
+          <button class="home-hotspot home-export" onclick="exportData()" title="导出数据"><span class="sr-only">导出数据</span></button>
+        </header>
+        <div class="home-card-list">
+          ${modules.filter(module => module.id !== "home").map(module => `<button class="home-visual-card" onclick="go('${module.id}')"><img src="assets/cards/${cardAssets[module.id]}.png" alt="" draggable="false"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
         </div>
+        <nav class="home-bottom-nav" aria-label="主页导航">
+          ${modules.map(module => `<button class="${module.id === "home" ? "active" : ""}" onclick="go('${module.id}')"><span class="home-nav-icon" style="--icon:url('assets/icons/${module.id}.svg')"></span><span>${esc(module.title)}</span></button>`).join("")}
+        </nav>
       </section>`;
     }
 
