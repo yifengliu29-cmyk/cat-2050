@@ -949,13 +949,16 @@
         border: 0;
         box-shadow: none;
       }
-      #app.home-root {
-        width: min(100vw, calc(100dvh * 941 / 1672));
-        height: min(100dvh, calc(100vw * 1672 / 941));
-      }
       .split { grid-template-columns: 1fr; }
       .stage-grid { grid-template-columns: repeat(5, minmax(44px, 1fr)); }
       .stage { min-height: 54px; font-size: 12px; padding: 4px; }
+    }
+
+    @media (max-width: 430px) {
+      #app.home-root {
+        width: 100vw;
+        height: 100dvh;
+      }
     }
   </style>
 </head>
