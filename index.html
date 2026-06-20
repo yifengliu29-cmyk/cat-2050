@@ -47,6 +47,108 @@
       overflow: hidden;
     }
 
+    #app.home-root {
+      width: min(941px, calc((100dvh - 28px) * 941 / 1672), calc(100vw - 28px));
+      height: min(1672px, calc(100dvh - 28px), calc((100vw - 28px) * 1672 / 941));
+      border: 0;
+      border-radius: 0;
+      background: #fff;
+      box-shadow: 0 24px 64px rgba(89, 63, 138, .18);
+    }
+
+    .app.home-mode {
+      display: block;
+      background: #fff;
+    }
+
+    .home-mode .sidebar {
+      display: none;
+    }
+
+    .home-mode main {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .home-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .home-reference {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .home-hotspot,
+    .home-nav-hotspot {
+      position: absolute;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: transparent;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .home-hotspot:hover,
+    .home-nav-hotspot:hover {
+      border: 0;
+    }
+
+    .home-hotspot:focus-visible,
+    .home-nav-hotspot:focus-visible {
+      outline: 3px solid rgba(255, 255, 255, .92);
+      outline-offset: -4px;
+    }
+
+    .home-import { left: 72.23%; top: 3.29%; width: 9.05%; height: 5.14%; }
+    .home-export { left: 84.26%; top: 3.29%; width: 9.05%; height: 5.14%; }
+    .home-card-strength { left: 3.94%; top: 12.67%; width: 92.02%; height: 15.78%; }
+    .home-card-arm { left: 3.94%; top: 29.53%; width: 92.02%; height: 15.36%; }
+    .home-card-finger { left: 3.94%; top: 45.85%; width: 92.02%; height: 14.52%; }
+    .home-card-climb { left: 3.94%; top: 61.27%; width: 92.02%; height: 14.41%; }
+    .home-card-pullup { left: 3.94%; top: 76.69%; width: 92.02%; height: 14.05%; }
+
+    .home-nav-hotspots {
+      position: absolute;
+      left: 4.8%;
+      right: 4.8%;
+      top: 92.2%;
+      bottom: .6%;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+    }
+
+    .home-nav-hotspot {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     button, input, select {
       font: inherit;
     }
@@ -847,6 +949,10 @@
         border: 0;
         box-shadow: none;
       }
+      #app.home-root {
+        width: min(100vw, calc(100dvh * 941 / 1672));
+        height: min(100dvh, calc(100vw * 1672 / 941));
+      }
       .split { grid-template-columns: 1fr; }
       .stage-grid { grid-template-columns: repeat(5, minmax(44px, 1fr)); }
       .stage { min-height: 54px; font-size: 12px; padding: 4px; }
@@ -1260,8 +1366,10 @@
     }
 
     function render() {
-      document.getElementById("app").innerHTML = `
-        <div class="app">
+      const appRoot = document.getElementById("app");
+      appRoot.classList.toggle("home-root", state.active === "home");
+      appRoot.innerHTML = `
+        <div class="app ${state.active === "home" ? "home-mode" : ""}">
           <aside class="sidebar">
             <div class="brand">
               <div class="brand-mark">50</div>
@@ -1312,18 +1420,19 @@
     }
 
     function renderHome() {
-      const cards = modules.filter(m => m.id !== "home").map(m => `
-        <button class="item-card" onclick="go('${m.id}')" style="text-align:left; min-height:122px">
-          <div class="item-head">
-            <div>
-              <div class="item-name">${m.title}</div>
-              <div class="meta">${homeMeta(m.id)}</div>
-            </div>
-            <span class="nav-icon">${m.icon}</span>
-          </div>
-        </button>`).join("");
-      const actions = `<button class="icon" onclick="chooseDataImport()" title="导入数据">⇩</button><button class="icon" onclick="exportData()" title="导出数据">⇧</button>`;
-      return pageHeader("主页", "五个训练模块", actions) + `<section class="grid">${cards}</section>`;
+      return `<section class="home-screen" aria-label="主页">
+        <img class="home-reference" src="assets/reference/home-original.png" alt="" draggable="false">
+        <button class="home-hotspot home-import" onclick="chooseDataImport()" title="导入数据"><span class="sr-only">导入数据</span></button>
+        <button class="home-hotspot home-export" onclick="exportData()" title="导出数据"><span class="sr-only">导出数据</span></button>
+        <button class="home-hotspot home-card-strength" onclick="go('strength')"><span class="sr-only">增力计划</span></button>
+        <button class="home-hotspot home-card-arm" onclick="go('arm')"><span class="sr-only">腕力计划</span></button>
+        <button class="home-hotspot home-card-finger" onclick="go('finger')"><span class="sr-only">指力计划</span></button>
+        <button class="home-hotspot home-card-climb" onclick="go('climb')"><span class="sr-only">攀岩打卡</span></button>
+        <button class="home-hotspot home-card-pullup" onclick="go('pullup')"><span class="sr-only">引体打卡</span></button>
+        <div class="home-nav-hotspots" aria-label="主页导航">
+          ${modules.map(module => `<button class="home-nav-hotspot" onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
+        </div>
+      </section>`;
     }
 
     function homeMeta(id) {
