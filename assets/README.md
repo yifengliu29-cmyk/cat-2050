@@ -1,17 +1,19 @@
-# Cat2050 assets
+# Cat2050 20.5:9 final assets
 
-Pixel-exact crops from `reference/home-original.png`.
+- Master reference: `1080 x 2460`
+- All PNG content is cropped directly from the approved master image.
+- No cat, card, icon, color, or typography was regenerated during splitting.
+- SVG files wrap the matching PNG crops so their appearance stays identical to the approved image.
+- Keep each SVG beside its same-named PNG dependency.
+- The source is a flattened image, so card text and illustrations cannot be separated into clean overlapping layers without repainting.
+- The source contains no embedded font file; `fonts/` is intentionally empty.
 
-## Card crop geometry
+## Card sizes
 
-| File | Source rectangle (x, y, width, height) |
+| Asset | Size |
 | --- | --- |
-| `cards/strength-cat.png` | `37, 212, 865, 264` |
-| `cards/arm-cat.png` | `37, 494, 865, 257` |
-| `cards/finger-cat.png` | `37, 767, 865, 243` |
-| `cards/climb-cat.png` | `37, 1025, 865, 241` |
-| `cards/pullup-cat.png` | `37, 1283, 865, 235` |
-
-The source mockup itself uses slightly different card heights. These files retain those original pixel dimensions without stretching or repainting.
-
-SVG icons use `currentColor` so the app can apply active and inactive colors. The screenshot does not contain an embedded font file, so `fonts/` is intentionally left empty; use the app's licensed Chinese UI font.
+| `strength-cat.png` | `1032 x 398` |
+| `arm-cat.png` | `1032 x 397` |
+| `finger-cat.png` | `1032 x 399` |
+| `climb-cat.png` | `1032 x 398` |
+| `pullup-cat.png` | `1032 x 351` |

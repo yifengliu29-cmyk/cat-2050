@@ -48,8 +48,8 @@
     }
 
     #app.home-root {
-      width: min(450px, calc((100dvh - 28px) * 9 / 20), calc(100vw - 28px));
-      height: min(1000px, calc(100dvh - 28px), calc((100vw - 28px) * 20 / 9));
+      width: min(450px, calc((100dvh - 28px) * 9 / 20.5), calc(100vw - 28px));
+      height: min(1025px, calc(100dvh - 28px), calc((100vw - 28px) * 20.5 / 9));
       border: 0;
       border-radius: 0;
       background: #fff;
@@ -72,20 +72,16 @@
     }
 
     .home-screen {
+      position: relative;
       width: 100%;
       height: 100%;
-      display: grid;
-      grid-template-rows: 11.5% minmax(0, 1fr) 8.6%;
       overflow: hidden;
       background: #fff;
     }
 
-    .home-header {
-      position: relative;
-      overflow: hidden;
-    }
-
-    .home-header-image {
+    .home-reference {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: fill;
@@ -93,9 +89,10 @@
       user-select: none;
     }
 
-    .home-hotspot,
+    .home-header-action,
     .home-visual-card,
     .home-bottom-nav button {
+      position: absolute;
       min-height: 0;
       padding: 0;
       border: 0;
@@ -106,97 +103,71 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .home-hotspot {
-      position: absolute;
+    .home-header-action {
+      top: 2.2%;
+      z-index: 3;
+      width: 10.2%;
+      aspect-ratio: 1;
+      border-radius: 22%;
     }
 
-    .home-hotspot:hover,
+    .home-header-action:hover,
     .home-visual-card:hover,
     .home-bottom-nav button:hover {
       border: 0;
     }
 
-    .home-hotspot:focus-visible,
+    .home-header-action:focus-visible,
     .home-visual-card:focus-visible,
     .home-bottom-nav button:focus-visible {
       outline: 3px solid rgba(255, 255, 255, .92);
       outline-offset: -4px;
     }
 
-    .home-import { left: 72.23%; top: 29.6%; width: 9.05%; height: 46.2%; }
-    .home-export { left: 84.26%; top: 29.6%; width: 9.05%; height: 46.2%; }
+    .home-import { right: 17.4%; }
+    .home-export { right: 4.8%; }
 
     .home-card-list {
-      min-height: 0;
-      display: grid;
-      grid-template-rows: repeat(5, minmax(0, 1fr));
-      gap: 1.05%;
-      padding: 1.5% 3.94% 1.2%;
+      position: absolute;
+      inset: 0;
+      z-index: 2;
     }
 
     .home-visual-card {
-      position: relative;
-      width: 100%;
-      height: 100%;
+      left: 2.037%;
+      width: 95.556%;
       overflow: hidden;
-      border-radius: 4.5% / 14%;
+      border-radius: 4.8% / 12%;
     }
 
-    .home-visual-card img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
-      pointer-events: none;
-      user-select: none;
-    }
+    .home-card-strength { top: 9.634%; height: 16.179%; }
+    .home-card-arm { top: 26.545%; height: 16.138%; }
+    .home-card-finger { top: 43.415%; height: 16.220%; }
+    .home-card-climb { top: 60.407%; height: 16.179%; }
+    .home-card-pullup { top: 77.317%; height: 14.268%; }
 
     .home-bottom-nav {
-      display: grid;
-      grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 1px;
-      padding: 5px 5px 4px;
-      border-radius: 18px 18px 0 0;
-      background: linear-gradient(105deg, #a38adb 0%, #c5b4ee 48%, #9d79df 100%);
-      box-shadow: 0 -7px 20px rgba(116, 80, 183, .14);
+      position: absolute;
+      left: .8%;
+      right: .8%;
+      bottom: 0;
+      height: 8.6%;
+      z-index: 3;
     }
 
     .home-bottom-nav button {
-      width: 100%;
+      top: 0;
+      bottom: 0;
+      width: calc(100% / 6);
       height: 100%;
-      display: grid;
-      grid-template-rows: minmax(0, 1fr) auto;
-      justify-items: center;
-      align-items: center;
-      gap: 1px;
-      border-radius: 10px;
-      color: rgba(255, 255, 255, .96);
-      font-size: clamp(8px, 2.7vw, 12px);
-      line-height: 1;
     }
 
-    .home-bottom-nav button.active {
-      background: rgba(255, 255, 255, .96);
-      color: #8455dd;
-    }
-
-    .home-nav-icon {
-      width: clamp(23px, 7vw, 32px);
-      aspect-ratio: 1;
-      border-radius: 8px;
-      display: grid;
-      place-items: center;
-      background: rgba(255, 255, 255, .12);
-    }
-
-    .home-nav-icon::before {
-      content: "";
-      width: 72%;
-      height: 72%;
-      background: currentColor;
-      -webkit-mask: var(--icon) center / contain no-repeat;
-      mask: var(--icon) center / contain no-repeat;
-    }
+    .home-bottom-nav button:nth-child(1) { left: 0; }
+    .home-bottom-nav button:nth-child(2) { left: calc(100% / 6); }
+    .home-bottom-nav button:nth-child(3) { left: calc(200% / 6); }
+    .home-bottom-nav button:nth-child(4) { left: calc(300% / 6); }
+    .home-bottom-nav button:nth-child(5) { left: calc(400% / 6); }
+    .home-bottom-nav button:nth-child(6) { left: calc(500% / 6); }
 
     .sr-only {
       position: absolute;
@@ -1017,8 +988,8 @@
 
     @media (max-width: 430px) {
       #app.home-root {
-        width: min(100vw, calc(100dvh * 9 / 20));
-        height: min(100dvh, calc(100vw * 20 / 9));
+        width: min(100vw, calc(100dvh * 9 / 20.5));
+        height: min(100dvh, calc(100vw * 20.5 / 9));
       }
     }
   </style>
@@ -1484,32 +1455,17 @@
     }
 
     function renderHome() {
-      const cardAssets = { strength: "strength-cat", arm: "arm-cat", finger: "finger-cat", climb: "climb-cat", pullup: "pullup-cat" };
       return `<section class="home-screen" aria-label="主页">
-        <header class="home-header">
-          <img class="home-header-image" src="assets/backgrounds/header-texture.png" alt="" draggable="false">
-          <button class="home-hotspot home-import" onclick="chooseDataImport()" title="导入数据"><span class="sr-only">导入数据</span></button>
-          <button class="home-hotspot home-export" onclick="exportData()" title="导出数据"><span class="sr-only">导出数据</span></button>
-        </header>
+        <img class="home-reference" src="assets/reference/home-original.png" alt="" draggable="false">
+        <button class="home-header-action home-import" onclick="chooseDataImport()" title="导入数据"><span class="sr-only">导入数据</span></button>
+        <button class="home-header-action home-export" onclick="exportData()" title="导出数据"><span class="sr-only">导出数据</span></button>
         <div class="home-card-list">
-          ${modules.filter(module => module.id !== "home").map(module => `<button class="home-visual-card" onclick="go('${module.id}')"><img src="assets/cards/${cardAssets[module.id]}.png" alt="" draggable="false"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
+          ${modules.filter(module => module.id !== "home").map(module => `<button class="home-visual-card home-card-${module.id}" onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
         </div>
         <nav class="home-bottom-nav" aria-label="主页导航">
-          ${modules.map(module => `<button class="${module.id === "home" ? "active" : ""}" onclick="go('${module.id}')"><span class="home-nav-icon" style="--icon:url('assets/icons/${module.id}.svg')"></span><span>${esc(module.title)}</span></button>`).join("")}
+          ${modules.map(module => `<button onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
         </nav>
       </section>`;
-    }
-
-    function homeMeta(id) {
-      if (id === "strength") return `${state.strength.length} 个项目`;
-      if (id === "arm") return `${countPlanItems("arm")} 个条目`;
-      if (id === "finger") return `${countPlanItems("finger")} 个条目`;
-      if (id === "pullup") return `${state.pullup.entries.length} 天记录`;
-      return "待接入";
-    }
-
-    function countPlanItems(type) {
-      return state[type].tree.reduce((sum, node) => sum + node.items.length, 0);
     }
 
     function renderStrength() {
