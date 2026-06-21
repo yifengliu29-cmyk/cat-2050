@@ -2557,20 +2557,33 @@
       height: 94.37cqw;
       margin-left: 1.88cqw;
       overflow: hidden;
-      border: 1px solid rgba(180, 157, 237, .66);
+      border: 0;
       border-radius: 4cqw;
-      background: rgba(255, 254, 252, .93);
-      box-shadow: 0 1.2cqw 3.2cqw rgba(126, 91, 193, .11);
-      backdrop-filter: blur(2cqw);
+      background: #fefbff url("assets/pullup-home/reference/pullup-master.png") -1.88cqw -44.08cqw / 100cqw auto no-repeat;
+      box-shadow: none;
     }
 
     .pullup-calendar-panel.rows-6 { height: 108cqw; }
+
+    .pullup-content:not(.reference-mode) .pullup-calendar-panel.rows-6::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      height: 16cqw;
+      pointer-events: none;
+      border-radius: 0 0 4cqw 4cqw;
+      background: #fefbff;
+      box-shadow: inset 0 -1px 0 rgba(180, 157, 237, .55), inset 1px 0 0 rgba(180, 157, 237, .38), inset -1px 0 0 rgba(180, 157, 237, .38);
+    }
 
     .pullup-calendar-head {
       position: absolute;
       left: 0;
       right: 0;
-      top: 5.3cqw;
+      top: 8.8cqw;
       height: 9.2cqw;
       z-index: 3;
       display: flex;
@@ -2579,10 +2592,10 @@
     }
 
     .pullup-calendar-title {
-      min-width: 34cqw;
+      min-width: 40cqw;
       padding: .7cqw 1.2cqw;
       border-radius: 2cqw;
-      background: rgba(255, 253, 251, .9);
+      background: #fefbff;
       color: #2e255c;
       font-size: 4.7cqw;
       font-weight: 700;
@@ -2594,35 +2607,42 @@
 
     .pullup-month-button {
       position: absolute;
-      top: -.05cqw;
-      width: 7.75cqw;
-      height: 9.15cqw;
+      top: -1.65cqw;
+      width: 13cqw;
+      height: 13cqw;
       min-height: 0;
       padding: 0;
-      display: grid;
-      place-items: center;
       border: 0;
-      border-radius: 2.4cqw 2.4cqw 3.1cqw 3.1cqw;
-      background: rgba(243, 237, 255, .9);
-      color: #7040dc;
-      box-shadow: inset 0 0 0 1px rgba(194, 174, 238, .62);
-      font-size: 5.3cqw;
-      line-height: 1;
+      border-radius: 4cqw;
+      background: transparent;
+      color: transparent;
+      box-shadow: none;
+      opacity: 0;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    .pullup-month-prev { left: 2.2cqw; }
-    .pullup-month-next { right: 5.75cqw; }
+    .pullup-month-prev { left: 3.75cqw; }
+    .pullup-month-next { right: 3.25cqw; }
 
     .pullup-calendar-grid {
       position: absolute;
       left: 3.75cqw;
-      top: 18.85cqw;
+      top: 20.6cqw;
       z-index: 2;
       width: 88.5cqw;
       display: grid;
       grid-template-columns: repeat(7, 11.02cqw);
       grid-auto-rows: 13.13cqw;
       gap: .47cqw 1.17cqw;
+    }
+
+    .pullup-content:not(.reference-mode) .pullup-calendar-grid::before {
+      content: "";
+      position: absolute;
+      inset: -.8cqw;
+      z-index: -1;
+      border-radius: 1.8cqw;
+      background: #fefbff;
     }
 
     .pullup-day {
@@ -2634,27 +2654,64 @@
       overflow: hidden;
       border: 1px solid rgba(191, 168, 235, .62);
       border-radius: 1.65cqw;
-      background: rgba(255, 254, 251, .9);
+      background: #fdfbfa url("assets/pullup-home/reference/pullup-master.png") 78% 72% / 240cqw auto no-repeat;
       color: #2e255c;
       box-shadow: inset 0 0 2cqw rgba(233, 224, 248, .24);
     }
 
+    .pullup-day::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: rgba(255, 253, 251, .9);
+      pointer-events: none;
+    }
+
+    .pullup-day::after {
+      content: "";
+      position: absolute;
+      right: .6cqw;
+      bottom: .45cqw;
+      z-index: 1;
+      width: 3.2cqw;
+      height: 2.9cqw;
+      pointer-events: none;
+      background: rgba(180, 158, 232, .38);
+      -webkit-mask: radial-gradient(circle at 50% 68%, #000 0 28%, transparent 30%), radial-gradient(circle at 21% 25%, #000 0 10%, transparent 12%), radial-gradient(circle at 42% 12%, #000 0 11%, transparent 13%), radial-gradient(circle at 64% 18%, #000 0 10%, transparent 12%), radial-gradient(circle at 82% 34%, #000 0 9%, transparent 11%);
+      mask: radial-gradient(circle at 50% 68%, #000 0 28%, transparent 30%), radial-gradient(circle at 21% 25%, #000 0 10%, transparent 12%), radial-gradient(circle at 42% 12%, #000 0 11%, transparent 13%), radial-gradient(circle at 64% 18%, #000 0 10%, transparent 12%), radial-gradient(circle at 82% 34%, #000 0 9%, transparent 11%);
+    }
+
     .pullup-day.blank {
-      background: rgba(255, 255, 255, .62);
+      background: #fefdfc;
       color: transparent;
+    }
+
+    .pullup-day.blank::before { background: rgba(255, 255, 255, .97); }
+    .pullup-day.blank::after { display: none; }
+
+    .pullup-day.trailing {
+      visibility: hidden;
+      border: 0;
     }
 
     .pullup-day.miss {
       border-color: rgba(239, 157, 158, .74);
-      background: rgba(249, 220, 220, .9);
+      background-color: #f8dada;
       box-shadow: inset 0 0 2.3cqw rgba(245, 187, 187, .2);
     }
 
+    .pullup-day.miss::before { background: rgba(249, 218, 218, .88); }
+    .pullup-day.miss::after { background: rgba(226, 133, 143, .52); }
+
     .pullup-day.hit {
       border-color: rgba(164, 137, 230, .76);
-      background: rgba(237, 231, 255, .92);
+      background-color: #ece5ff;
       box-shadow: inset 0 0 2.3cqw rgba(188, 167, 238, .24);
     }
+
+    .pullup-day.hit::before { background: rgba(237, 231, 255, .88); }
+    .pullup-day.hit::after { background: rgba(159, 127, 224, .42); }
 
     .pullup-day.today { box-shadow: inset 0 0 0 2px rgba(124, 82, 233, .52); }
 
@@ -2663,6 +2720,7 @@
       left: 0;
       right: 0;
       top: 1.55cqw;
+      z-index: 2;
       font-size: 4.1cqw;
       font-weight: 500;
       line-height: 1;
@@ -2674,6 +2732,7 @@
       left: 1.45cqw;
       right: 1.45cqw;
       bottom: 0;
+      z-index: 2;
       min-height: 3.45cqw;
       display: grid;
       place-items: center;
@@ -4093,6 +4152,8 @@
         const today = iso === todayISO() ? " today" : "";
         cells.push(`<button class="pullup-day ${cls}${today}" onclick="newPullupEntry('${iso}')" title="${iso}${total ? `，${total}` : ""}"><span class="pullup-day-date">${day}</span><span class="pullup-day-count">${total || ""}</span></button>`);
       }
+      const targetCells = Math.max(35, Math.ceil((pad + days) / 7) * 7);
+      while (cells.length < targetCells) cells.push(`<div class="pullup-day blank trailing" aria-hidden="true"></div>`);
       return cells.join("");
     }
 
