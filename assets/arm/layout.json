@@ -1,0 +1,495 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 2460,
+    "colorSpace": "sRGB"
+  },
+  "source": {
+    "master": "reference/arm-master-1080x2460.png",
+    "note": "All split assets were derived from this single final reference image."
+  },
+  "fonts": [
+    {
+      "file": "fonts/regular.woff2",
+      "family": "Noto Sans CJK SC",
+      "fontWeight": 500
+    },
+    {
+      "file": "fonts/bold.woff2",
+      "family": "Noto Sans CJK SC",
+      "fontWeight": 700
+    }
+  ],
+  "fixedRegions": {
+    "topFixed": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 250
+    },
+    "contentScroll": {
+      "x": 0,
+      "y": 250,
+      "width": 1080,
+      "height": 1942
+    },
+    "bottomFixed": {
+      "x": 0,
+      "y": 2192,
+      "width": 1080,
+      "height": 268
+    }
+  },
+  "elements": {
+    "headerTexture": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 250
+    },
+    "pageTexture": {
+      "x": 0,
+      "y": 250,
+      "width": 1080,
+      "height": 1942
+    },
+    "title": {
+      "x": 47,
+      "y": 57,
+      "width": 290,
+      "height": 64,
+      "fontSize": 52,
+      "fontWeight": 700,
+      "lineHeight": 58,
+      "color": "#FFFFFF"
+    },
+    "subtitle": {
+      "x": 49,
+      "y": 124,
+      "width": 234,
+      "height": 44,
+      "fontSize": 24,
+      "fontWeight": 500,
+      "lineHeight": 30,
+      "color": "#FFFFFF"
+    },
+    "pawWatermark": {
+      "x": 332,
+      "y": 55,
+      "width": 163,
+      "height": 109
+    },
+    "headerActions": {
+      "import": {
+        "x": 587,
+        "y": 59,
+        "width": 89,
+        "height": 103,
+        "cornerRadius": 22,
+        "icon": "icons/import.svg"
+      },
+      "focus": {
+        "x": 695,
+        "y": 59,
+        "width": 89,
+        "height": 103,
+        "cornerRadius": 22,
+        "icon": "icons/focus.svg"
+      },
+      "add": {
+        "x": 801,
+        "y": 52,
+        "width": 99,
+        "height": 110,
+        "cornerRadius": 22,
+        "icon": "icons/add.svg",
+        "state": "active"
+      },
+      "undo": {
+        "x": 915,
+        "y": 59,
+        "width": 90,
+        "height": 103,
+        "cornerRadius": 22,
+        "icon": "icons/undo.svg"
+      }
+    },
+    "categoryBar": {
+      "x": 20,
+      "y": 287,
+      "width": 934,
+      "height": 124,
+      "cornerRadius": 22,
+      "borderWidth": 0,
+      "shadow": {
+        "offsetX": 0,
+        "offsetY": 0,
+        "blur": 0,
+        "color": "rgba(0,0,0,0)"
+      },
+      "text": {
+        "fontSize": 32,
+        "fontWeight": 700,
+        "lineHeight": 38,
+        "color": "#3B2B74"
+      },
+      "count": {
+        "fontSize": 24,
+        "fontWeight": 500,
+        "lineHeight": 30,
+        "color": "#7F76A2"
+      },
+      "chevron": {
+        "x": 927,
+        "y": 325,
+        "width": 24,
+        "height": 24
+      }
+    },
+    "guideLine": {
+      "x": 74,
+      "y": 440,
+      "width": 7,
+      "height": 1710
+    },
+    "cards": {
+      "pairedTemplate": {
+        "x": 106,
+        "y": 477,
+        "width": 879,
+        "height": 357,
+        "cornerRadius": 22,
+        "border": {
+          "width": 2,
+          "color": "#D8C6F1"
+        },
+        "shadow": {
+          "offsetX": 0,
+          "offsetY": 3,
+          "blur": 9,
+          "color": "rgba(175,146,222,0.18)"
+        },
+        "name": {
+          "x": 36,
+          "y": 37,
+          "fontSize": 33,
+          "fontWeight": 700,
+          "lineHeight": 40,
+          "color": "#221744"
+        },
+        "levelMeta": {
+          "x": 243,
+          "y": 40,
+          "fontSize": 20,
+          "fontWeight": 500,
+          "lineHeight": 26,
+          "color": "#7C729E"
+        },
+        "plusButton": {
+          "x": 392,
+          "y": 31,
+          "width": 62,
+          "height": 62,
+          "cornerRadius": 16,
+          "asset": "cards/small-button.png"
+        },
+        "favoriteButton": {
+          "x": 767,
+          "y": 33,
+          "width": 80,
+          "height": 80,
+          "cornerRadius": 18,
+          "normalAsset": "cards/favorite-normal.png",
+          "focusAsset": "cards/favorite-focus.png"
+        },
+        "handPill": {
+          "rightRow1": {
+            "x": 31,
+            "y": 135,
+            "width": 53,
+            "height": 64
+          },
+          "leftRow2": {
+            "x": 31,
+            "y": 216,
+            "width": 53,
+            "height": 64
+          }
+        },
+        "weightPill": {
+          "row1": {
+            "x": 131,
+            "y": 135,
+            "width": 185,
+            "height": 64
+          },
+          "row2": {
+            "x": 131,
+            "y": 216,
+            "width": 185,
+            "height": 64
+          }
+        },
+        "maxPill": {
+          "row1": {
+            "x": 359,
+            "y": 135,
+            "width": 197,
+            "height": 64
+          },
+          "row2": {
+            "x": 359,
+            "y": 216,
+            "width": 197,
+            "height": 64
+          }
+        },
+        "smallButtons": {
+          "sheng": {
+            "x": 623,
+            "y": 137,
+            "width": 79,
+            "height": 80
+          },
+          "ji": {
+            "x": 759,
+            "y": 137,
+            "width": 79,
+            "height": 80
+          }
+        },
+        "cornerDecoration": {
+          "x": 755,
+          "y": 278,
+          "width": 124,
+          "height": 78
+        }
+      },
+      "singleTemplate": {
+        "x": 106,
+        "y": 1264,
+        "width": 879,
+        "height": 260,
+        "cornerRadius": 22,
+        "border": {
+          "width": 2,
+          "color": "#D8C6F1"
+        },
+        "shadow": {
+          "offsetX": 0,
+          "offsetY": 3,
+          "blur": 9,
+          "color": "rgba(175,146,222,0.18)"
+        },
+        "name": {
+          "x": 36,
+          "y": 37,
+          "fontSize": 33,
+          "fontWeight": 700,
+          "lineHeight": 40,
+          "color": "#221744"
+        },
+        "levelMeta": {
+          "x": 336,
+          "y": 41,
+          "fontSize": 20,
+          "fontWeight": 500,
+          "lineHeight": 26,
+          "color": "#7C729E"
+        },
+        "plusButton": {
+          "x": 479,
+          "y": 32,
+          "width": 62,
+          "height": 62,
+          "cornerRadius": 16
+        },
+        "favoriteButton": {
+          "x": 767,
+          "y": 32,
+          "width": 80,
+          "height": 80,
+          "cornerRadius": 18
+        },
+        "handPill": {
+          "x": 31,
+          "y": 146,
+          "width": 73,
+          "height": 64
+        },
+        "weightPill": {
+          "x": 131,
+          "y": 146,
+          "width": 185,
+          "height": 64
+        },
+        "maxPill": {
+          "x": 359,
+          "y": 146,
+          "width": 197,
+          "height": 64
+        },
+        "smallButtons": {
+          "sheng": {
+            "x": 623,
+            "y": 137,
+            "width": 79,
+            "height": 80
+          },
+          "ji": {
+            "x": 759,
+            "y": 137,
+            "width": 79,
+            "height": 80
+          }
+        },
+        "cornerDecoration": {
+          "x": 755,
+          "y": 182,
+          "width": 124,
+          "height": 78
+        }
+      },
+      "cardSpacing": 38,
+      "categorySpacing": 35,
+      "nineSlice": {
+        "cards/card-paired-empty.png": {
+          "left": 24,
+          "right": 24,
+          "top": 24,
+          "bottom": 24
+        },
+        "cards/card-single-empty.png": {
+          "left": 24,
+          "right": 24,
+          "top": 24,
+          "bottom": 24
+        },
+        "cards/hand-pill.png": {
+          "left": 20,
+          "right": 20,
+          "top": 14,
+          "bottom": 14
+        },
+        "cards/weight-pill.png": {
+          "left": 28,
+          "right": 28,
+          "top": 14,
+          "bottom": 14
+        },
+        "cards/max-pill.png": {
+          "left": 28,
+          "right": 28,
+          "top": 14,
+          "bottom": 14
+        },
+        "cards/small-button.png": {
+          "left": 16,
+          "right": 16,
+          "top": 16,
+          "bottom": 16
+        },
+        "navigation/nav-active.png": {
+          "left": 22,
+          "right": 22,
+          "top": 22,
+          "bottom": 22
+        }
+      }
+    },
+    "scrollbar": {
+      "track": {
+        "x": 1063,
+        "y": 281,
+        "width": 11,
+        "height": 1893
+      },
+      "thumb": {
+        "x": 1062,
+        "y": 334,
+        "width": 13,
+        "height": 602
+      },
+      "topArrow": {
+        "x": 1051,
+        "y": 262,
+        "width": 29,
+        "height": 32
+      }
+    },
+    "navigation": {
+      "background": {
+        "x": 0,
+        "y": 2192,
+        "width": 1080,
+        "height": 268,
+        "cornerRadius": 36
+      },
+      "active": {
+        "x": 373,
+        "y": 2209,
+        "width": 128,
+        "height": 225,
+        "cornerRadius": 26
+      },
+      "labels": {
+        "fontSize": 18,
+        "fontWeight": 500,
+        "lineHeight": 24,
+        "color": "#FFFFFF",
+        "activeColor": "#7E4FE9"
+      },
+      "items": [
+        {
+          "name": "首页",
+          "icon": "navigation/nav-home.svg",
+          "centerX": 92,
+          "iconY": 2252,
+          "labelY": 2350
+        },
+        {
+          "name": "增力计划",
+          "icon": "navigation/nav-strength.svg",
+          "centerX": 282,
+          "iconY": 2252,
+          "labelY": 2348
+        },
+        {
+          "name": "腕力计划",
+          "icon": "navigation/nav-arm.svg",
+          "centerX": 437,
+          "iconY": 2253,
+          "labelY": 2349,
+          "active": true
+        },
+        {
+          "name": "指力计划",
+          "icon": "navigation/nav-finger.svg",
+          "centerX": 607,
+          "iconY": 2253,
+          "labelY": 2348
+        },
+        {
+          "name": "攀岩打卡",
+          "icon": "navigation/nav-climb.svg",
+          "centerX": 793,
+          "iconY": 2250,
+          "labelY": 2349
+        },
+        {
+          "name": "引体打卡",
+          "icon": "navigation/nav-pullup.svg",
+          "centerX": 972,
+          "iconY": 2250,
+          "labelY": 2349
+        }
+      ]
+    }
+  },
+  "notes": [
+    "All PNGs are RGBA, transparent where applicable, tightly cropped while preserving shadows and glow.",
+    "Dynamic text is intentionally not baked into split assets.",
+    "Icon SVGs are provided with matching PNG previews.",
+    "Favorite normal/focus states are additionally provided as cards/favorite-normal.png and cards/favorite-focus.png to satisfy the two-state requirement."
+  ]
+}

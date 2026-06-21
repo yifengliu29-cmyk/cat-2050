@@ -1,0 +1,231 @@
+{
+  "canvas": {
+    "width": 1080,
+    "height": 2460,
+    "aspectRatio": "9:20.5"
+  },
+  "fonts": [
+    {
+      "file": "fonts/NotoSansCJK-Regular.ttc",
+      "family": "Noto Sans CJK SC",
+      "weight": 500
+    },
+    {
+      "file": "fonts/NotoSansCJK-Bold.ttc",
+      "family": "Noto Sans CJK SC",
+      "weight": 700
+    }
+  ],
+  "assets": {
+    "headerTexture": "backgrounds/header-texture.png",
+    "pageTexture": "backgrounds/page-texture.png",
+    "cardEmpty": "cards/card-empty.png",
+    "weightPill": "cards/weight-pill.png",
+    "stageDone": "cards/stage-done.png",
+    "stageActive": "cards/stage-active.png",
+    "stagePending": "cards/stage-pending.png",
+    "paw": "decorations/paw.png",
+    "cornerFlowers": "decorations/corner-flowers.png",
+    "navBackground": "navigation/nav-background.png",
+    "navActive": "navigation/nav-active.png"
+  },
+  "elements": {
+    "header": {
+      "x": 0,
+      "y": 0,
+      "width": 1080,
+      "height": 250,
+      "cornerRadiusTopLeft": 0,
+      "cornerRadiusTopRight": 0
+    },
+    "title": {
+      "x": 46,
+      "y": 48,
+      "fontSize": 34.0,
+      "lineHeight": 36.0,
+      "fontWeight": 700,
+      "color": "#FFFFFF"
+    },
+    "topActions": [
+      {
+        "name": "import",
+        "x": 690,
+        "y": 52,
+        "width": 72,
+        "height": 72,
+        "cornerRadius": 18
+      },
+      {
+        "name": "add",
+        "x": 796,
+        "y": 52,
+        "width": 72,
+        "height": 72,
+        "cornerRadius": 18
+      },
+      {
+        "name": "undo",
+        "x": 902,
+        "y": 52,
+        "width": 72,
+        "height": 72,
+        "cornerRadius": 18
+      }
+    ],
+    "exerciseCardTemplate": {
+      "x": 42,
+      "width": 996,
+      "height": 302,
+      "cornerRadius": 28,
+      "shadow": {
+        "offsetX": 0,
+        "offsetY": 6,
+        "blur": 16,
+        "color": "rgba(158,132,213,0.16)"
+      },
+      "title": {
+        "x": 28,
+        "y": 28,
+        "fontSize": 32,
+        "lineHeight": 40,
+        "fontWeight": 700,
+        "color": "#2B2349"
+      },
+      "count": {
+        "x": 160,
+        "y": 33,
+        "fontSize": 20,
+        "lineHeight": 24,
+        "fontWeight": 500,
+        "color": "#7B7196"
+      },
+      "plusButton": {
+        "x": 205,
+        "y": 19,
+        "width": 56,
+        "height": 56,
+        "cornerRadius": 14
+      },
+      "weightPill": {
+        "x": 832,
+        "y": 22,
+        "width": 122,
+        "height": 58,
+        "cornerRadius": 29
+      },
+      "stageRow": {
+        "x": 30,
+        "y": 104
+      },
+      "stageTile": {
+        "width": 152,
+        "height": 126,
+        "gap": 24,
+        "cornerRadius": 18,
+        "titleFontSize": 28,
+        "titleWeight": 700,
+        "subtitleFontSize": 18,
+        "subtitleWeight": 500,
+        "stretch": {
+          "left": 18,
+          "top": 18,
+          "right": 18,
+          "bottom": 18
+        }
+      }
+    },
+    "exerciseCards": [
+      {
+        "name": "卧推",
+        "y": 212
+      },
+      {
+        "name": "引体",
+        "y": 538
+      },
+      {
+        "name": "深蹲",
+        "y": 864
+      },
+      {
+        "name": "硬拉",
+        "y": 1190
+      },
+      {
+        "name": "实力推",
+        "y": 1516
+      },
+      {
+        "name": "挺铃弯举",
+        "y": 1842
+      }
+    ],
+    "scrollbar": {
+      "x": 1058,
+      "y": 235,
+      "width": 8,
+      "height": 1530,
+      "thumbY": 430,
+      "thumbHeight": 560
+    },
+    "navigation": {
+      "x": 0,
+      "y": 2312,
+      "width": 1080,
+      "height": 148,
+      "activeIndex": 1,
+      "itemCentersX": [
+        90,
+        270,
+        450,
+        630,
+        810,
+        990
+      ],
+      "iconY": 2348,
+      "labelY": 2400,
+      "activePill": {
+        "width": 118,
+        "height": 112,
+        "offsetY": 18
+      }
+    }
+  },
+  "stretchableRegions": {
+    "cards/card-empty.png": {
+      "top": 28,
+      "middleStartY": 80,
+      "middleEndY": 220,
+      "bottom": 54
+    },
+    "cards/stage-done.png": {
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18
+    },
+    "cards/stage-active.png": {
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18
+    },
+    "cards/stage-pending.png": {
+      "left": 18,
+      "right": 18,
+      "top": 18,
+      "bottom": 18
+    },
+    "cards/weight-pill.png": {
+      "left": 24,
+      "right": 24,
+      "top": 14,
+      "bottom": 14
+    }
+  },
+  "notes": [
+    "All raster assets are RGBA PNG with transparent background and tight bounds.",
+    "Text such as exercise names, weights, and stage labels should be rendered by web/app code.",
+    "System-provided Chinese fonts are supplied as TTC files due environment availability."
+  ]
+}
