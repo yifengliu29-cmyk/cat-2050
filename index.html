@@ -120,6 +120,15 @@
       box-shadow: 0 24px 64px rgba(89, 63, 138, .18);
     }
 
+    #app.climb-root {
+      width: min(450px, calc((100dvh - 28px) * 9 / 20.5), calc(100vw - 28px));
+      height: min(1025px, calc(100dvh - 28px), calc((100vw - 28px) * 20.5 / 9));
+      border: 0;
+      border-radius: 0;
+      background: #fbfaff;
+      box-shadow: 0 24px 64px rgba(89, 63, 138, .18);
+    }
+
     .app.home-mode {
       display: block;
       background: #fff;
@@ -176,11 +185,25 @@
       overflow: hidden;
     }
 
+    .app.climb-mode {
+      display: block;
+      background: #fbfaff;
+    }
+
+    .climb-mode .sidebar { display: none; }
+
+    .climb-mode main {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
     .home-screen {
       position: relative;
       width: 100%;
       height: 100%;
       overflow: hidden;
+      container-type: inline-size;
       background: #fff;
     }
 
@@ -2929,6 +2952,133 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    .climb-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      container-type: inline-size;
+      background: #fbf9ff;
+    }
+
+    .climb-content {
+      height: 100%;
+      overflow-y: auto;
+      padding-bottom: 21cqw;
+    }
+
+    .climb-header-art {
+      position: relative;
+      height: 20cqw;
+      overflow: hidden;
+      border-radius: 9cqw 9cqw 0 0;
+      background: #a995e5 url("assets/backgrounds/header-texture.png") 38% top / 220cqw auto no-repeat;
+      color: #fff;
+    }
+
+    .climb-header-title,
+    .climb-header-subtitle {
+      position: absolute;
+      left: 5.35cqw;
+      margin: 0;
+      color: #fff;
+      letter-spacing: 0;
+      text-shadow: 0 .2cqw .7cqw rgba(76, 49, 132, .14);
+    }
+
+    .climb-header-title {
+      top: 4.7cqw;
+      font-size: 6cqw;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .climb-header-subtitle {
+      top: 12.1cqw;
+      color: rgba(255, 255, 255, .9);
+      font-size: 3.05cqw;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .home-bottom-nav.asset-bottom-nav,
+    .strength-nav.asset-bottom-nav,
+    .arm-nav.reference-art-nav.asset-bottom-nav,
+    .finger-nav.reference-art-nav.asset-bottom-nav,
+    .climb-bottom-nav.asset-bottom-nav,
+    .pullup-bottom-nav.asset-bottom-nav {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 20;
+      width: 100%;
+      height: 18.306cqw;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 0;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background-color: transparent;
+      background-image: var(--bottom-nav-art);
+      background-position: center;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      box-shadow: none;
+    }
+
+    .asset-bottom-nav-home { --bottom-nav-art: url("assets/bottom-nav/home-selected.png"); }
+    .asset-bottom-nav-strength { --bottom-nav-art: url("assets/bottom-nav/strength-selected.png"); }
+    .asset-bottom-nav-arm { --bottom-nav-art: url("assets/bottom-nav/arm-selected.png"); }
+    .asset-bottom-nav-finger { --bottom-nav-art: url("assets/bottom-nav/finger-selected.png"); }
+    .asset-bottom-nav-climb { --bottom-nav-art: url("assets/bottom-nav/climb-selected.png"); }
+    .asset-bottom-nav-pullup { --bottom-nav-art: url("assets/bottom-nav/pullup-selected.png"); }
+
+    .home-bottom-nav.asset-bottom-nav > button:nth-child(n),
+    .strength-nav.asset-bottom-nav > button:nth-child(n),
+    .arm-nav.reference-art-nav.asset-bottom-nav > button:nth-child(n),
+    .finger-nav.reference-art-nav.asset-bottom-nav > button:nth-child(n),
+    .climb-bottom-nav.asset-bottom-nav > button:nth-child(n),
+    .pullup-bottom-nav.asset-bottom-nav > button:nth-child(n) {
+      position: relative;
+      inset: auto;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      min-height: 0;
+      padding: 0;
+      display: block;
+      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: transparent;
+      box-shadow: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .asset-bottom-nav > button:nth-child(n)::before,
+    .asset-bottom-nav > button:nth-child(n)::after {
+      content: none;
+      display: none;
+    }
+
+    .finger-nav.reference-art-nav.asset-bottom-nav::before {
+      content: none;
+      display: none;
+    }
+
+    .asset-bottom-nav > button:nth-child(n) > * {
+      opacity: 0;
+    }
+
+    .asset-bottom-nav > button:nth-child(n):focus-visible {
+      outline: 2px solid rgba(255, 255, 255, .95);
+      outline-offset: -3px;
+    }
+
     @media (max-width: 430px), (max-height: 700px) {
       body { padding: 0; }
       #app {
@@ -2946,6 +3096,7 @@
       #app.strength-root,
       #app.arm-root,
       #app.finger-root,
+      #app.climb-root,
       #app.pullup-root {
         width: min(100vw, calc(100dvh * 9 / 20.5));
         height: min(100dvh, calc(100vw * 20.5 / 9));
@@ -3403,9 +3554,10 @@
       appRoot.classList.toggle("strength-root", state.active === "strength");
       appRoot.classList.toggle("arm-root", state.active === "arm");
       appRoot.classList.toggle("finger-root", state.active === "finger");
+      appRoot.classList.toggle("climb-root", state.active === "climb");
       appRoot.classList.toggle("pullup-root", state.active === "pullup");
       appRoot.innerHTML = `
-        <div class="app ${state.active === "home" ? "home-mode" : state.active === "strength" ? "strength-mode" : state.active === "arm" ? "arm-mode" : state.active === "finger" ? "finger-mode" : state.active === "pullup" ? "pullup-mode" : ""}">
+        <div class="app ${state.active === "home" ? "home-mode" : state.active === "strength" ? "strength-mode" : state.active === "arm" ? "arm-mode" : state.active === "finger" ? "finger-mode" : state.active === "climb" ? "climb-mode" : state.active === "pullup" ? "pullup-mode" : ""}">
           <aside class="sidebar">
             <div class="brand">
               <div class="brand-mark">50</div>
@@ -3468,7 +3620,7 @@
         <div class="home-card-list">
           ${modules.filter(module => module.id !== "home").map(module => `<button class="home-visual-card home-card-${module.id}" onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
         </div>
-        <nav class="home-bottom-nav" aria-label="主页导航">
+        <nav class="home-bottom-nav asset-bottom-nav asset-bottom-nav-home" aria-label="主页导航">
           ${modules.map(module => `<button onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
         </nav>
       </section>`;
@@ -3488,7 +3640,7 @@
           <section class="strength-grid">${list}</section>
         </div>
         <div class="strength-scrollbar" aria-hidden="true"><span class="strength-scrollbar-thumb"></span></div>
-        <nav class="strength-nav" aria-label="增力计划导航">
+        <nav class="strength-nav asset-bottom-nav asset-bottom-nav-strength" aria-label="增力计划导航">
           ${modules.map(module => `<button class="${module.id === "strength" ? "active" : ""}" onclick="go('${module.id}')"><img src="assets/strength/icons/nav-${module.id}.png" alt=""><span>${esc(module.title)}</span></button>`).join("")}
         </nav>
       </section>`;
@@ -3634,7 +3786,7 @@
           <img class="arm-scrollbar-arrow" src="assets/arm/scrollbar/top-arrow.svg" alt="">
           <span class="arm-scrollbar-thumb"></span>
         </div>
-        <nav class="arm-nav reference-art-nav" aria-label="腕力计划导航">
+        <nav class="arm-nav reference-art-nav asset-bottom-nav asset-bottom-nav-arm" aria-label="腕力计划导航">
           ${modules.map(module => `<button class="${module.id === "arm" ? "active" : ""}" onclick="go('${module.id}')"><span class="reference-nav-icon reference-nav-${module.id}"></span><span class="reference-nav-label">${esc(module.title)}</span></button>`).join("")}
         </nav>
       </section>`;
@@ -3661,7 +3813,7 @@
           <img class="arm-scrollbar-arrow" src="assets/arm/scrollbar/top-arrow.svg" alt="">
           <span class="arm-scrollbar-thumb"></span>
         </div>
-        <nav class="finger-nav reference-art-nav" aria-label="指力计划导航">
+        <nav class="finger-nav reference-art-nav asset-bottom-nav asset-bottom-nav-finger" aria-label="指力计划导航">
           ${modules.map(module => `<button class="${module.id === "finger" ? "active" : ""}" onclick="go('${module.id}')"><span class="reference-nav-icon reference-nav-${module.id}"></span><span class="reference-nav-label">${esc(module.title)}</span></button>`).join("")}
         </nav>
       </section>`;
@@ -3959,7 +4111,18 @@
     }
 
     function renderClimb() {
-      return pageHeader("攀岩打卡", "入口保留", "") + `<section class="band"><div class="empty">待复刻</div></section>`;
+      return `<section class="climb-screen" aria-label="攀岩打卡">
+        <div class="climb-content">
+          <header class="climb-header-art">
+            <h2 class="climb-header-title">攀岩打卡</h2>
+            <p class="climb-header-subtitle">入口保留</p>
+          </header>
+          <section class="band"><div class="empty">待复刻</div></section>
+        </div>
+        <nav class="climb-bottom-nav asset-bottom-nav asset-bottom-nav-climb" aria-label="攀岩打卡导航">
+          ${modules.map(module => `<button class="${module.id === "climb" ? "active" : ""}" onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
+        </nav>
+      </section>`;
     }
 
     function renderPullup() {
@@ -4004,7 +4167,7 @@
           </section>
         </div>
         <button class="pullup-checkin-button" onclick="newPullupEntry()"><span class="sr-only">打卡</span></button>
-        <nav class="pullup-bottom-nav" aria-label="引体打卡导航">
+        <nav class="pullup-bottom-nav asset-bottom-nav asset-bottom-nav-pullup" aria-label="引体打卡导航">
           ${modules.map(module => `<button class="${module.id === "pullup" ? "active" : ""}" onclick="go('${module.id}')"><span class="sr-only">${esc(module.title)}</span></button>`).join("")}
         </nav>
       </section>`;
