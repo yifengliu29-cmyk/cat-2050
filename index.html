@@ -665,7 +665,7 @@
       container-type: inline-size;
       color: #312858;
       font-family: "Arm UI", "Microsoft YaHei", "PingFang SC", sans-serif;
-      background: #fbf9ff url("assets/arm/backgrounds/page-texture.png") center / 100% 100% no-repeat;
+      background: #fbf9ff;
     }
 
     .arm-header-art {
@@ -1128,7 +1128,7 @@
       z-index: 4;
       height: 22.04cqw;
       overflow: hidden;
-      background: #a995e5 url("assets/arm/backgrounds/header-texture.png") center / 100% 100% no-repeat;
+      background: #a995e5 url("assets/backgrounds/header-texture.png") 48% top / 220cqw auto no-repeat;
       color: #fff;
       pointer-events: none;
     }
@@ -1139,7 +1139,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: rgba(154, 135, 220, .2);
+      background: transparent;
     }
 
     .finger-header-title,
@@ -1176,6 +1176,7 @@
       object-fit: contain;
       opacity: .36;
       z-index: 1;
+      display: none;
     }
 
     .finger-toolbar button {
@@ -2417,27 +2418,27 @@
       height: 35.64cqw;
       overflow: hidden;
       border-radius: 0 0 5.2cqw 5.2cqw;
-      background: url("assets/pullup-home/backgrounds/header-texture.png") top center / 100% 100% no-repeat;
+      background: #967ade url("assets/pullup-home/reference/pullup-master.png") -140.5cqw 0 / 250cqw auto no-repeat;
       color: #fff;
     }
 
     .pullup-screen.reference-mode .pullup-header-art {
-      background: url("assets/pullup-home/reference/pullup-master.png") top center / 100% auto no-repeat;
+      background: #967ade url("assets/pullup-home/reference/pullup-master.png") -140.5cqw 0 / 250cqw auto no-repeat;
     }
 
     .pullup-screen.reference-mode .pullup-header-copy h2,
     .pullup-screen.reference-mode .pullup-header-total,
     .pullup-screen.reference-mode .pullup-header-meta span:first-child,
     .pullup-screen.reference-mode .pullup-header-action {
-      opacity: 0;
+      opacity: 1;
     }
 
     .pullup-screen.reference-mode .pullup-header-meta span:last-child {
-      margin-left: -.8cqw;
-      padding: .15cqw .8cqw .3cqw;
-      border-radius: .7cqw;
-      background: rgba(146, 126, 220, .94);
-      backdrop-filter: blur(.8cqw);
+      margin-left: 0;
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      backdrop-filter: none;
     }
 
     .pullup-header-copy {
@@ -2448,7 +2449,7 @@
       width: 42cqw;
       display: grid;
       justify-items: start;
-      text-shadow: 0 .35cqw 1.2cqw rgba(75, 49, 130, .12);
+      text-shadow: none;
     }
 
     .pullup-header-copy h2 {
@@ -2520,7 +2521,7 @@
       overflow-y: auto;
       overscroll-behavior: contain;
       scrollbar-width: none;
-      background: #fefbff url("assets/pullup-home/backgrounds/page-texture.png") top center / 100% auto no-repeat;
+      background: #fefbff;
       -webkit-overflow-scrolling: touch;
     }
 
